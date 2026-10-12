@@ -1,0 +1,6543 @@
+[
+  {
+    "address": 70,
+    "name": "EMS Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "System",
+    "group": "Info",
+    "version": 0,
+    "description": "EMS software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "ems_version_70",
+    "component": "system_info"
+  },
+  {
+    "address": 71,
+    "name": "BMS Master Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Master BMS software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "bms_master_version_71",
+    "component": "battery_info"
+  },
+  {
+    "address": 72,
+    "name": "Inverter Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Inverter",
+    "group": "Info",
+    "version": 0,
+    "description": "Inverter software version. Parse the decimal value directly and display it in the format Vx.xx (e.g. 108 → V1.08).",
+    "options": {},
+    "key": "inverter_version_72",
+    "component": "inverter_info"
+  },
+  {
+    "address": 73,
+    "name": "MPPT Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "MPPT software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "mppt_version_73",
+    "component": "battery_info"
+  },
+  {
+    "address": 78,
+    "name": "Maximum MPPT Channels",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "PV",
+    "group": "Info",
+    "version": 0,
+    "description": "Maximum number of MPPT inputs. ECO/AC versions report 0, while PV-enabled versions report 4.",
+    "options": {},
+    "key": "maximum_mppt_channels_78",
+    "component": "pv_info"
+  },
+  {
+    "address": 80,
+    "name": "Maximum number of strings",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Maximum number of battery modules supported by the current system.",
+    "options": {},
+    "key": "maximum_number_of_strings_80",
+    "component": "battery_info"
+  },
+  {
+    "address": 81,
+    "name": "Rated output power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Info",
+    "version": 0,
+    "description": "Maximum rated output power of the inverter.",
+    "options": {},
+    "key": "rated_output_power_81",
+    "component": "inverter_info"
+  },
+  {
+    "address": 83,
+    "name": "Maximum active power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Info",
+    "version": 0,
+    "description": "Maximum active output power of the system. The maximum output active power is dynamically limited by both the inverter rating and the battery capability. For example, if the inverter is rated at 2400 W and four battery modules can each provide 1 kW, the total battery output is 4 kW, but the system output is limited to 2400 W by the inverter rating.",
+    "options": {},
+    "key": "maximum_active_power_83",
+    "component": "inverter_info"
+  },
+  {
+    "address": 89,
+    "name": "Rated Capacity（Wh）",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Total battery capacity of the system. The value is the combined capacity of all battery modules and depends on both the number and type of battery modules installed.",
+    "options": {},
+    "key": "rated_capacity_wh_89",
+    "component": "battery_info"
+  },
+  {
+    "address": 90,
+    "name": "Maximum charge power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Maximum battery charging capability. This value is obtained from the battery and represents the maximum charging power supported by the battery.",
+    "options": {},
+    "key": "maximum_charge_power_90",
+    "component": "battery_info"
+  },
+  {
+    "address": 91,
+    "name": "Maximum discharge power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Maximum system discharge active power. The maximum output active power is dynamically limited by both the inverter rating and the battery capability. For example, if the inverter is rated at 2400 W and four battery modules can each provide 1 kW, the total battery output is 4 kW, but the system output is limited to 2400 W by the inverter rating.",
+    "options": {},
+    "key": "maximum_discharge_power_91",
+    "component": "battery_info"
+  },
+  {
+    "address": 92,
+    "name": "DCDC_slaver1_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave DCDC1 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "dcdc_slaver1_version_92",
+    "component": "battery_info"
+  },
+  {
+    "address": 93,
+    "name": "BMS_slaver1_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave BMS1 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "bms_slaver1_version_93",
+    "component": "battery_info"
+  },
+  {
+    "address": 94,
+    "name": "DCDC_slaver2_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave DCDC2 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "dcdc_slaver2_version_94",
+    "component": "battery_info"
+  },
+  {
+    "address": 95,
+    "name": "BMS_slaver2_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave BMS2 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "bms_slaver2_version_95",
+    "component": "battery_info"
+  },
+  {
+    "address": 96,
+    "name": "DCDC_slaver3_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave DCDC3 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "dcdc_slaver3_version_96",
+    "component": "battery_info"
+  },
+  {
+    "address": 97,
+    "name": "BMS_slaver3_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave BMS3 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "bms_slaver3_version_97",
+    "component": "battery_info"
+  },
+  {
+    "address": 98,
+    "name": "DCDC_slaver4_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave DCDC4 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "dcdc_slaver4_version_98",
+    "component": "battery_info"
+  },
+  {
+    "address": 99,
+    "name": "BMS_slaver4_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave BMS4 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "bms_slaver4_version_99",
+    "component": "battery_info"
+  },
+  {
+    "address": 103,
+    "name": "AphA",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "A",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "INV input current when charging; INV output current when not charging. No direction indication (always positive).",
+    "options": {},
+    "key": "aph_a_103",
+    "component": "inverter_real_time_data"
+  },
+  {
+    "address": 110,
+    "name": "PhVphA",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "V",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "INV input voltage when charging; INV output voltage when not charging. Not intended for grid voltage detection.",
+    "options": {},
+    "key": "ph_vph_a_110",
+    "component": "inverter_real_time_data"
+  },
+  {
+    "address": 116,
+    "name": "Hz",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "Hz",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "INV input frequency when charging; INV output frequency when not charging. Not intended for grid frequency detection.",
+    "options": {},
+    "key": "hz_116",
+    "component": "inverter_real_time_data"
+  },
+  {
+    "address": 118,
+    "name": "VA",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "VA",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "0 when INV is charging; otherwise, INV AC apparent output power.",
+    "options": {},
+    "key": "va_118",
+    "component": "inverter_real_time_data"
+  },
+  {
+    "address": 120,
+    "name": "VAr",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "var",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "AC Reactive Power",
+    "options": {},
+    "key": "var_120",
+    "component": "inverter_real_time_data"
+  },
+  {
+    "address": 122,
+    "name": "PF",
+    "data_type": "int16",
+    "scale": 0.001,
+    "unit": "Pct",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "0 when INV is charging; otherwise, INV AC output power factor.",
+    "options": {},
+    "key": "pf_122",
+    "component": "inverter_real_time_data"
+  },
+  {
+    "address": 124,
+    "name": "WH",
+    "data_type": "acc32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "PV",
+    "group": "Statistics",
+    "version": 0,
+    "description": "PV Daily Energy Generation",
+    "options": {},
+    "key": "wh_124",
+    "component": "pv_statistics"
+  },
+  {
+    "address": 138,
+    "name": "St",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "System",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "System Operating Status",
+    "options": {
+      "1": {
+        "name": "OFF",
+        "version": 0
+      },
+      "2": {
+        "name": "SLEEPING",
+        "version": 0
+      },
+      "3": {
+        "name": "STARTING",
+        "version": 0
+      },
+      "4": {
+        "name": "MPPT",
+        "version": 0
+      },
+      "5": {
+        "name": "THROTTLED",
+        "version": 0
+      },
+      "6": {
+        "name": "SHUTTING_DOWN",
+        "version": 0
+      },
+      "7": {
+        "name": "FAULT",
+        "version": 0
+      },
+      "8": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "9": {
+        "name": "ON_GRID_CHARGE",
+        "version": 0
+      },
+      "10": {
+        "name": "ON_GRID_DISCHARGE",
+        "version": 0
+      },
+      "11": {
+        "name": "OFF_GRID_CHARGE",
+        "version": 0
+      },
+      "12": {
+        "name": "OFF_GRID_DISCHARGE",
+        "version": 0
+      },
+      "13": {
+        "name": "BATTERY_CHARGING",
+        "version": 0
+      },
+      "14": {
+        "name": "DEEP_SLEEP",
+        "version": 0
+      },
+      "15": {
+        "name": "FORCED_FULL_CHARGE",
+        "version": 0
+      },
+      "16": {
+        "name": "OFF_GRID_DEEP_SLEEP",
+        "version": 14
+      }
+    },
+    "key": "st_138",
+    "component": "system_real_time_state"
+  },
+  {
+    "address": 140,
+    "name": "Evt1",
+    "data_type": "bitfield32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Inverter",
+    "group": "Event",
+    "version": 0,
+    "description": "INV Fault 1",
+    "options": {
+      "1": {
+        "name": "DC_OVER_VOLT",
+        "version": 0
+      },
+      "2": {
+        "name": "AC_DISCONNECT",
+        "version": 0
+      },
+      "3": {
+        "name": "DC_DISCONNECT",
+        "version": 0
+      },
+      "4": {
+        "name": "GRID_DISCONNECT",
+        "version": 0
+      },
+      "5": {
+        "name": "GROUND_FAULT",
+        "version": 0
+      },
+      "6": {
+        "name": "AC_OUTPUT_SHORT",
+        "version": 0
+      },
+      "7": {
+        "name": "OVER_TEMP",
+        "version": 0
+      },
+      "8": {
+        "name": "OVER_FREQUENCY",
+        "version": 0
+      },
+      "9": {
+        "name": "UNDER_FREQUENCY",
+        "version": 0
+      },
+      "10": {
+        "name": "AC_OVER_VOLT",
+        "version": 0
+      },
+      "11": {
+        "name": "AC_UNDER_VOLT",
+        "version": 0
+      },
+      "12": {
+        "name": "BLOWN_STRING_FUSE",
+        "version": 0
+      },
+      "13": {
+        "name": "UNDER_TEMP",
+        "version": 0
+      },
+      "19": {
+        "name": "OFF_GRID_OVER_VOLT",
+        "version": 0
+      },
+      "20": {
+        "name": "OFF_GRID_UNDER_VOLT",
+        "version": 0
+      },
+      "21": {
+        "name": "OFF_GRID_OVERLOAD",
+        "version": 0
+      },
+      "24": {
+        "name": "RELAY_FAIL",
+        "version": 0
+      },
+      "25": {
+        "name": "EPS_OVER_LOAD",
+        "version": 0
+      }
+    },
+    "key": "evt1_140",
+    "component": "inverter_event"
+  },
+  {
+    "address": 154,
+    "name": "HomeUseW",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Load",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Home Load Power",
+    "options": {},
+    "key": "home_use_w_154",
+    "component": "load_real_time_data"
+  },
+  {
+    "address": 170,
+    "name": "AC_WH_input",
+    "data_type": "acc32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Total INV Input Energy",
+    "options": {},
+    "key": "ac_wh_input_170",
+    "component": "inverter_statistics"
+  },
+  {
+    "address": 174,
+    "name": "INV input power",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "INV AC input/output power with direction. Positive = AC input (charging); Negative = AC output (discharging). Replaces the definition of register 114.",
+    "options": {},
+    "key": "inv_input_power_174",
+    "component": "inverter_real_time_data"
+  },
+  {
+    "address": 196,
+    "name": "AC OUT discharge energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Bypass",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Total Bypass Port Discharge Energy",
+    "options": {},
+    "key": "ac_out_discharge_energy_196",
+    "component": "bypass_statistics"
+  },
+  {
+    "address": 198,
+    "name": "Day - AC OUT discharge energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Bypass",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Daily Bypass Discharge Energy",
+    "options": {},
+    "key": "day_ac_out_discharge_energy_198",
+    "component": "bypass_statistics"
+  },
+  {
+    "address": 1132,
+    "name": "Time year-month",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "Date (Year/Month)，High byte: Year (2000-based), range 0–99; Low byte: Month, range 1–12",
+    "options": {},
+    "key": "time_year_month_1132",
+    "component": "system_settings"
+  },
+  {
+    "address": 1133,
+    "name": "Time day-hour",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "Date (Day/Hour)，High byte: Day, range 1–31; Low byte: Hour, range 0–23",
+    "options": {},
+    "key": "time_day_hour_1133",
+    "component": "system_settings"
+  },
+  {
+    "address": 1134,
+    "name": "Time min-sec",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "Time (Minute/Second)，High byte: Minute, range 0–59; Low byte: Second, range 0–59",
+    "options": {},
+    "key": "time_min_sec_1134",
+    "component": "system_settings"
+  },
+  {
+    "address": 1138,
+    "name": "ACchargeSpeed",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "AC Output",
+    "group": "Settings",
+    "version": 0,
+    "description": "Charging Power Limit Range: 100-10800",
+    "options": {},
+    "key": "accharge_speed_1138",
+    "component": "ac_output_settings"
+  },
+  {
+    "address": 1140,
+    "name": "Standby timeout",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "h",
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "Standby Timeout，For E2000G2, the timeout before automatically entering Off-grid Deep Sleep. Set to 0 to disable automatic entry into Off-grid Deep Sleep.",
+    "options": {},
+    "key": "standby_timeout_1140",
+    "component": "system_settings"
+  },
+  {
+    "address": 1142,
+    "name": "BackUpSoc",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "Battery",
+    "group": "Settings",
+    "version": 0,
+    "description": "Backup SOC (%). Range:0-100",
+    "options": {},
+    "key": "back_up_soc_1142",
+    "component": "battery_settings"
+  },
+  {
+    "address": 1143,
+    "name": "GridChargeEnable",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "AC Output",
+    "group": "Settings",
+    "version": 0,
+    "description": "Grid Charging Enable (0 = Disable, 1 = Enable)",
+    "options": {
+      "0": {
+        "name": "Disabled",
+        "version": 0
+      },
+      "1": {
+        "name": "Enabled",
+        "version": 0
+      }
+    },
+    "key": "grid_charge_enable_1143",
+    "component": "ac_output_settings",
+    "source_note": "Two trailing Inverter/Event continuation rows belong to inverter faults, not this AC Output setting. Codes 0/1 are specified in the description."
+  },
+  {
+    "address": 1144,
+    "name": "SystemMode",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "System operating mode (read/write)",
+    "options": {
+      "1": {
+        "name": "Self-consumption",
+        "version": 0
+      },
+      "4": {
+        "name": "Realtime Control",
+        "version": 0
+      },
+      "6": {
+        "name": "User-defined Time Control",
+        "version": 16
+      }
+    },
+    "key": "system_mode_1144",
+    "component": "system_mode"
+  },
+  {
+    "address": 1146,
+    "name": "FeedBack Power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "Grid",
+    "group": "Settings",
+    "version": 0,
+    "description": "Maximum Grid Feed-in Power.Range: 0-10800",
+    "options": {},
+    "key": "feed_back_power_1146",
+    "component": "grid_settings"
+  },
+  {
+    "address": 1147,
+    "name": "AC max discharge power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "Inverter",
+    "group": "Settings",
+    "version": 0,
+    "description": "Maximum INV Output Power.Range:0-3600",
+    "options": {},
+    "key": "ac_max_discharge_power_1147",
+    "component": "inverter_settings"
+  },
+  {
+    "address": 1150,
+    "name": "Realtime Control Order",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Real-time control command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 0
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 0
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 0
+      }
+    },
+    "key": "realtime_control_order_1150",
+    "component": "system_mode"
+  },
+  {
+    "address": 1151,
+    "name": "Realtime Control Power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Real-time control power. Configurable range: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "realtime_control_power_1151",
+    "component": "system_mode"
+  },
+  {
+    "address": 1152,
+    "name": "Realtime Control end SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Real-time control end SoC. Range: 0–100%",
+    "options": {},
+    "key": "realtime_control_end_soc_1152",
+    "component": "system_mode"
+  },
+  {
+    "address": 1154,
+    "name": "OffGird BackUpSoc",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "Battery",
+    "group": "Settings",
+    "version": 0,
+    "description": "Off-grid Backup SOC (%). Range: 5-100",
+    "options": {},
+    "key": "off_gird_back_up_soc_1154",
+    "component": "battery_settings"
+  },
+  {
+    "address": 1155,
+    "name": "Deep Sleep start Time hour-min",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "Deep Sleep Schedule Start Time，Format example: 0x121E = 18:30. High byte = Hour (0–23), Low byte = Minute (0–59).",
+    "options": {},
+    "key": "deep_sleep_start_time_hour_min_1155",
+    "component": "system_settings"
+  },
+  {
+    "address": 1156,
+    "name": "Deep Sleep stop Time hour-min",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "Deep Sleep Schedule End Time，Format example: 0x121E = 18:30. High byte = Hour (0–23), Low byte = Minute (0–59).",
+    "options": {},
+    "key": "deep_sleep_stop_time_hour_min_1156",
+    "component": "system_settings"
+  },
+  {
+    "address": 1246,
+    "name": "MeterState",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "Meter",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Meter Status",
+    "options": {
+      "0": {
+        "name": "disconnect",
+        "version": 0
+      },
+      "1": {
+        "name": "connect",
+        "version": 0
+      }
+    },
+    "key": "meter_state_1246",
+    "component": "meter_real_time_state"
+  },
+  {
+    "address": 1247,
+    "name": "MeterPu",
+    "data_type": "int32",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "Meter",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Meter Phase U Power",
+    "options": {},
+    "key": "meter_pu_1247",
+    "component": "meter_real_time_data"
+  },
+  {
+    "address": 1269,
+    "name": "B Charge Energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Total Battery Charge Energy",
+    "options": {},
+    "key": "b_charge_energy_1269",
+    "component": "battery_statistics"
+  },
+  {
+    "address": 1271,
+    "name": "B disCharge Energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Total Battery Discharge Energy",
+    "options": {},
+    "key": "b_dis_charge_energy_1271",
+    "component": "battery_statistics"
+  },
+  {
+    "address": 1282,
+    "name": "ChargeLeftTime",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "min",
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Remaining Charging Time (min)",
+    "options": {},
+    "key": "charge_left_time_1282",
+    "component": "battery_statistics"
+  },
+  {
+    "address": 1283,
+    "name": "DischargeLeftTime",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "min",
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Remaining Discharging Time (min)",
+    "options": {},
+    "key": "discharge_left_time_1283",
+    "component": "battery_statistics"
+  },
+  {
+    "address": 1284,
+    "name": "ACOutW",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "AC Output",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Total AC Power = INV Power (positive when charging, negative when discharging) + Bypass Power (positive for EPS, negative for microinverter).",
+    "options": {},
+    "key": "acout_w_1284",
+    "component": "ac_output_real_time_data"
+  },
+  {
+    "address": 2219,
+    "name": "DCA",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV1 Current",
+    "options": {},
+    "key": "dca_2219",
+    "component": "pv_1"
+  },
+  {
+    "address": 2220,
+    "name": "DCV",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "V",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV1 Voltage",
+    "options": {},
+    "key": "dcv_2220",
+    "component": "pv_1"
+  },
+  {
+    "address": 2221,
+    "name": "DCW",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV1 Power",
+    "options": {},
+    "key": "dcw_2221",
+    "component": "pv_1"
+  },
+  {
+    "address": 2228,
+    "name": "DCEvt",
+    "data_type": "bitfield32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "PV",
+    "group": "Event",
+    "version": 0,
+    "description": "PV1 Alarm Code",
+    "options": {
+      "1": {
+        "name": "INPUT_OVER_VOLTAGE",
+        "version": 0
+      },
+      "3": {
+        "name": "DC_DISCONNECT",
+        "version": 0
+      },
+      "12": {
+        "name": "BLOWN_FUSE",
+        "version": 0
+      },
+      "13": {
+        "name": "UNDER_TEMP",
+        "version": 0
+      },
+      "19": {
+        "name": "PV_INPUT_REVERSE",
+        "version": 0
+      },
+      "21": {
+        "name": "INPUT_UNDER_VOLTAGE",
+        "version": 0
+      }
+    },
+    "key": "dcevt_2228",
+    "component": "pv_1"
+  },
+  {
+    "address": 2239,
+    "name": "DCA",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV2 Current",
+    "options": {},
+    "key": "dca_2239",
+    "component": "pv_2"
+  },
+  {
+    "address": 2240,
+    "name": "DCV",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "V",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV2 Voltage",
+    "options": {},
+    "key": "dcv_2240",
+    "component": "pv_2"
+  },
+  {
+    "address": 2241,
+    "name": "DCW",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV2 Power",
+    "options": {},
+    "key": "dcw_2241",
+    "component": "pv_2"
+  },
+  {
+    "address": 2247,
+    "name": "DCSt",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "PV2 Operating Status",
+    "options": {
+      "1003": {
+        "name": "OFF",
+        "version": 0
+      },
+      "1004": {
+        "name": "SLEEPING",
+        "version": 0
+      },
+      "1005": {
+        "name": "STARTING",
+        "version": 0
+      },
+      "1006": {
+        "name": "MPPT",
+        "version": 0
+      },
+      "1007": {
+        "name": "THROTTLED",
+        "version": 0
+      },
+      "1008": {
+        "name": "SHUTTING_DOWN",
+        "version": 0
+      },
+      "1009": {
+        "name": "FAULT",
+        "version": 0
+      },
+      "1010": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "1011": {
+        "name": "TEST",
+        "version": 0
+      }
+    },
+    "key": "dcst_2247",
+    "component": "pv_2"
+  },
+  {
+    "address": 2248,
+    "name": "DCEvt",
+    "data_type": "bitfield32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "PV",
+    "group": "Event",
+    "version": 0,
+    "description": "PV2 Alarm Code",
+    "options": {
+      "1": {
+        "name": "INPUT_OVER_VOLTAGE",
+        "version": 0
+      },
+      "3": {
+        "name": "DC_DISCONNECT",
+        "version": 0
+      },
+      "12": {
+        "name": "BLOWN_FUSE",
+        "version": 0
+      },
+      "13": {
+        "name": "UNDER_TEMP",
+        "version": 0
+      },
+      "19": {
+        "name": "PV_INPUT_REVERSE",
+        "version": 0
+      },
+      "21": {
+        "name": "INPUT_UNDER_VOLTAGE",
+        "version": 0
+      }
+    },
+    "key": "dcevt_2248",
+    "component": "pv_2"
+  },
+  {
+    "address": 2250,
+    "name": "PV total power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Total PV Charging Power",
+    "options": {},
+    "key": "pv_total_power_2250",
+    "component": "pv_real_time_data"
+  },
+  {
+    "address": 2260,
+    "name": "DCA",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV3 Current",
+    "options": {},
+    "key": "dca_2260",
+    "component": "pv_3"
+  },
+  {
+    "address": 2261,
+    "name": "DCV",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "V",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV3 Voltage",
+    "options": {},
+    "key": "dcv_2261",
+    "component": "pv_3"
+  },
+  {
+    "address": 2262,
+    "name": "DCW",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV3 Power",
+    "options": {},
+    "key": "dcw_2262",
+    "component": "pv_3"
+  },
+  {
+    "address": 2268,
+    "name": "DCSt",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "PV3 Operating Status",
+    "options": {
+      "1003": {
+        "name": "OFF",
+        "version": 0
+      },
+      "1004": {
+        "name": "SLEEPING",
+        "version": 0
+      },
+      "1005": {
+        "name": "STARTING",
+        "version": 0
+      },
+      "1006": {
+        "name": "MPPT",
+        "version": 0
+      },
+      "1007": {
+        "name": "THROTTLED",
+        "version": 0
+      },
+      "1008": {
+        "name": "SHUTTING_DOWN",
+        "version": 0
+      },
+      "1009": {
+        "name": "FAULT",
+        "version": 0
+      },
+      "1010": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "1011": {
+        "name": "TEST",
+        "version": 0
+      }
+    },
+    "key": "dcst_2268",
+    "component": "pv_3"
+  },
+  {
+    "address": 2269,
+    "name": "DCEvt",
+    "data_type": "bitfield32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "PV",
+    "group": "Event",
+    "version": 0,
+    "description": "PV3 Alarm Code",
+    "options": {
+      "1": {
+        "name": "INPUT_OVER_VOLTAGE",
+        "version": 0
+      },
+      "3": {
+        "name": "DC_DISCONNECT",
+        "version": 0
+      },
+      "12": {
+        "name": "BLOWN_FUSE",
+        "version": 0
+      },
+      "13": {
+        "name": "UNDER_TEMP",
+        "version": 0
+      },
+      "19": {
+        "name": "PV_INPUT_REVERSE",
+        "version": 0
+      },
+      "21": {
+        "name": "INPUT_UNDER_VOLTAGE",
+        "version": 0
+      }
+    },
+    "key": "dcevt_2269",
+    "component": "pv_3"
+  },
+  {
+    "address": 2280,
+    "name": "DCA",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV4 Current",
+    "options": {},
+    "key": "dca_2280",
+    "component": "pv_4"
+  },
+  {
+    "address": 2281,
+    "name": "DCV",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "V",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV4 Voltage",
+    "options": {},
+    "key": "dcv_2281",
+    "component": "pv_4"
+  },
+  {
+    "address": 2282,
+    "name": "DCW",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "PV4 Power",
+    "options": {},
+    "key": "dcw_2282",
+    "component": "pv_4"
+  },
+  {
+    "address": 2288,
+    "name": "DCSt",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "PV",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "PV4 Operating Status",
+    "options": {
+      "1003": {
+        "name": "OFF",
+        "version": 0
+      },
+      "1004": {
+        "name": "SLEEPING",
+        "version": 0
+      },
+      "1005": {
+        "name": "STARTING",
+        "version": 0
+      },
+      "1006": {
+        "name": "MPPT",
+        "version": 0
+      },
+      "1007": {
+        "name": "THROTTLED",
+        "version": 0
+      },
+      "1008": {
+        "name": "SHUTTING_DOWN",
+        "version": 0
+      },
+      "1009": {
+        "name": "FAULT",
+        "version": 0
+      },
+      "1010": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "1011": {
+        "name": "TEST",
+        "version": 0
+      }
+    },
+    "key": "dcst_2288",
+    "component": "pv_4"
+  },
+  {
+    "address": 2289,
+    "name": "DCEvt",
+    "data_type": "bitfield32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "PV",
+    "group": "Event",
+    "version": 0,
+    "description": "PV4 Alarm Code",
+    "options": {
+      "1": {
+        "name": "INPUT_OVER_VOLTAGE",
+        "version": 0
+      },
+      "3": {
+        "name": "DC_DISCONNECT",
+        "version": 0
+      },
+      "12": {
+        "name": "BLOWN_FUSE",
+        "version": 0
+      },
+      "13": {
+        "name": "UNDER_TEMP",
+        "version": 0
+      },
+      "19": {
+        "name": "PV_INPUT_REVERSE",
+        "version": 0
+      },
+      "21": {
+        "name": "INPUT_UNDER_VOLTAGE",
+        "version": 0
+      }
+    },
+    "key": "dcevt_2289",
+    "component": "pv_4"
+  },
+  {
+    "address": 6007,
+    "name": "SoH",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Master Battery Pack SOH",
+    "options": {},
+    "key": "so_h_6007",
+    "component": "battery_0_real_time_data"
+  },
+  {
+    "address": 6008,
+    "name": "NCyc",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Master Battery Pack Cycle Count",
+    "options": {},
+    "key": "ncyc_6008",
+    "component": "battery_0_statistics"
+  },
+  {
+    "address": 6010,
+    "name": "V",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "V",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Master Battery Pack Voltage",
+    "options": {},
+    "key": "v_6010",
+    "component": "battery_0_real_time_data"
+  },
+  {
+    "address": 6018,
+    "name": "CellTmpMin",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Master Battery Pack Minimum Cell Temperature",
+    "options": {},
+    "key": "cell_tmp_min_6018",
+    "component": "battery_0_real_time_data"
+  },
+  {
+    "address": 6022,
+    "name": "SN",
+    "data_type": "string",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Master battery module serial number.",
+    "options": {},
+    "key": "sn_6022",
+    "component": "battery_0_info",
+    "deferred": "Serial register length is not specified by the source."
+  },
+  {
+    "address": 6108,
+    "name": "A",
+    "data_type": "int16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Master Battery Pack Current",
+    "options": {},
+    "key": "a_6108",
+    "component": "battery_0_real_time_data"
+  },
+  {
+    "address": 6119,
+    "name": "SoH",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 1 SOH",
+    "options": {},
+    "key": "so_h_6119",
+    "component": "battery_1_real_time_data"
+  },
+  {
+    "address": 6120,
+    "name": "NCyc",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Slave Battery Pack 1 Cycle Count",
+    "options": {},
+    "key": "ncyc_6120",
+    "component": "battery_1_statistics"
+  },
+  {
+    "address": 6122,
+    "name": "V",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "V",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 1 Voltage",
+    "options": {},
+    "key": "v_6122",
+    "component": "battery_1_real_time_data"
+  },
+  {
+    "address": 6130,
+    "name": "CellTmpMin",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 1 Minimum Cell Temperature",
+    "options": {},
+    "key": "cell_tmp_min_6130",
+    "component": "battery_1_real_time_data"
+  },
+  {
+    "address": 6134,
+    "name": "SN",
+    "data_type": "string",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave battery module 1 serial number.",
+    "options": {},
+    "key": "sn_6134",
+    "component": "battery_1_info",
+    "deferred": "Serial register length is not specified by the source."
+  },
+  {
+    "address": 6220,
+    "name": "A",
+    "data_type": "int16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 1 Current (uplink register)",
+    "options": {},
+    "key": "a_6220",
+    "component": "battery_1_real_time_data"
+  },
+  {
+    "address": 6231,
+    "name": "SoH",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 2 SOH",
+    "options": {},
+    "key": "so_h_6231",
+    "component": "battery_2_real_time_data"
+  },
+  {
+    "address": 6232,
+    "name": "NCyc",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Slave Battery Pack 2 Cycle Count",
+    "options": {},
+    "key": "ncyc_6232",
+    "component": "battery_2_statistics"
+  },
+  {
+    "address": 6234,
+    "name": "V",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "V",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 2 Voltage",
+    "options": {},
+    "key": "v_6234",
+    "component": "battery_2_real_time_data"
+  },
+  {
+    "address": 6242,
+    "name": "CellTmpMin",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 2 Minimum Cell Temperature",
+    "options": {},
+    "key": "cell_tmp_min_6242",
+    "component": "battery_2_real_time_data"
+  },
+  {
+    "address": 6246,
+    "name": "SN",
+    "data_type": "string",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave battery module 2 serial number.",
+    "options": {},
+    "key": "sn_6246",
+    "component": "battery_2_info",
+    "deferred": "Serial register length is not specified by the source."
+  },
+  {
+    "address": 6332,
+    "name": "A",
+    "data_type": "int16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 2 Current (uplink register)",
+    "options": {},
+    "key": "a_6332",
+    "component": "battery_2_real_time_data"
+  },
+  {
+    "address": 6343,
+    "name": "SoH",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 3 SOH",
+    "options": {},
+    "key": "so_h_6343",
+    "component": "battery_3_real_time_data"
+  },
+  {
+    "address": 6344,
+    "name": "NCyc",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Slave Battery Pack 3 Cycle Count",
+    "options": {},
+    "key": "ncyc_6344",
+    "component": "battery_3_statistics"
+  },
+  {
+    "address": 6346,
+    "name": "V",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "V",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 3 Voltage",
+    "options": {},
+    "key": "v_6346",
+    "component": "battery_3_real_time_data"
+  },
+  {
+    "address": 6354,
+    "name": "CellTmpMin",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 3 Minimum Cell Temperature",
+    "options": {},
+    "key": "cell_tmp_min_6354",
+    "component": "battery_3_real_time_data"
+  },
+  {
+    "address": 6358,
+    "name": "SN",
+    "data_type": "string",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave battery module 3 serial number.",
+    "options": {},
+    "key": "sn_6358",
+    "component": "battery_3_info",
+    "deferred": "Serial register length is not specified by the source."
+  },
+  {
+    "address": 6444,
+    "name": "A",
+    "data_type": "int16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 3 Current",
+    "options": {},
+    "key": "a_6444",
+    "component": "battery_3_real_time_data"
+  },
+  {
+    "address": 6455,
+    "name": "SoH",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 4 SOH",
+    "options": {},
+    "key": "so_h_6455",
+    "component": "battery_4_real_time_data"
+  },
+  {
+    "address": 6456,
+    "name": "NCyc",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Slave Battery Pack 4 Cycle Count",
+    "options": {},
+    "key": "ncyc_6456",
+    "component": "battery_4_statistics"
+  },
+  {
+    "address": 6458,
+    "name": "V",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "V",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 4 Voltage",
+    "options": {},
+    "key": "v_6458",
+    "component": "battery_4_real_time_data"
+  },
+  {
+    "address": 6466,
+    "name": "CellTmpMin",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 4 Minimum Cell Temperature",
+    "options": {},
+    "key": "cell_tmp_min_6466",
+    "component": "battery_4_real_time_data"
+  },
+  {
+    "address": 6470,
+    "name": "SN",
+    "data_type": "string",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave battery module 4 serial number.",
+    "options": {},
+    "key": "sn_6470",
+    "component": "battery_4_info",
+    "deferred": "Serial register length is not specified by the source."
+  },
+  {
+    "address": 6556,
+    "name": "A",
+    "data_type": "int16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 4 Current (uplink register)",
+    "options": {},
+    "key": "a_6556",
+    "component": "battery_4_real_time_data"
+  },
+  {
+    "address": 6563,
+    "name": "BatteryState",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Overall Battery Pack Operating Status",
+    "options": {
+      "0": {
+        "name": "Standby",
+        "version": 0
+      },
+      "1": {
+        "name": "Charging",
+        "version": 0
+      },
+      "2": {
+        "name": "Discharging",
+        "version": 0
+      }
+    },
+    "key": "battery_state_6563",
+    "component": "battery_real_time_state"
+  },
+  {
+    "address": 6564,
+    "name": "BatteryPower",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Total Battery Pack Charge/Discharge Power. Positive = Discharging; Negative = Charging.",
+    "options": {},
+    "key": "battery_power_6564",
+    "component": "battery_real_time_data"
+  },
+  {
+    "address": 6588,
+    "name": "DC/DC state",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Master Battery Pack DC/DC Status",
+    "options": {
+      "0": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 0
+      },
+      "2": {
+        "name": "DISCHARGE",
+        "version": 0
+      },
+      "3": {
+        "name": "PROTECTION",
+        "version": 0
+      }
+    },
+    "key": "dc_dc_state_6588",
+    "component": "battery_0_heater"
+  },
+  {
+    "address": 6593,
+    "name": "electric heating state",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Master Battery Pack Heater Status",
+    "options": {
+      "0": {
+        "name": "OFF",
+        "version": 0
+      },
+      "1": {
+        "name": "ON",
+        "version": 0
+      }
+    },
+    "key": "electric_heating_state_6593",
+    "component": "battery_0_heater"
+  },
+  {
+    "address": 6594,
+    "name": "electric heating temperature",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Master Battery Pack Heater Temperature",
+    "options": {},
+    "key": "electric_heating_temperature_6594",
+    "component": "battery_0_heater"
+  },
+  {
+    "address": 6595,
+    "name": "electric heating power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Master Battery Pack Heater Power",
+    "options": {},
+    "key": "electric_heating_power_6595",
+    "component": "battery_0_heater"
+  },
+  {
+    "address": 6620,
+    "name": "DC/DC state",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 1 DC/DC Status",
+    "options": {
+      "0": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 0
+      },
+      "2": {
+        "name": "DISCHARGE",
+        "version": 0
+      },
+      "3": {
+        "name": "PROTECTION",
+        "version": 0
+      }
+    },
+    "key": "dc_dc_state_6620",
+    "component": "battery_1_heater"
+  },
+  {
+    "address": 6625,
+    "name": "electric heating state",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 1 Heater Status",
+    "options": {
+      "0": {
+        "name": "OFF",
+        "version": 0
+      },
+      "1": {
+        "name": "ON",
+        "version": 0
+      }
+    },
+    "key": "electric_heating_state_6625",
+    "component": "battery_1_heater"
+  },
+  {
+    "address": 6626,
+    "name": "electric heating temperature",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 1 Heater Temperature",
+    "options": {},
+    "key": "electric_heating_temperature_6626",
+    "component": "battery_1_heater"
+  },
+  {
+    "address": 6627,
+    "name": "electric heating power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 1 Heater Power",
+    "options": {},
+    "key": "electric_heating_power_6627",
+    "component": "battery_1_heater"
+  },
+  {
+    "address": 6652,
+    "name": "DC/DC state",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 2 DC/DC Status",
+    "options": {
+      "0": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 0
+      },
+      "2": {
+        "name": "DISCHARGE",
+        "version": 0
+      },
+      "3": {
+        "name": "PROTECTION",
+        "version": 0
+      }
+    },
+    "key": "dc_dc_state_6652",
+    "component": "battery_2_heater"
+  },
+  {
+    "address": 6657,
+    "name": "electric heating state",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 2 Heater Status",
+    "options": {
+      "0": {
+        "name": "OFF",
+        "version": 0
+      },
+      "1": {
+        "name": "ON",
+        "version": 0
+      }
+    },
+    "key": "electric_heating_state_6657",
+    "component": "battery_2_heater"
+  },
+  {
+    "address": 6658,
+    "name": "electric heating temperature",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 2 Heater Temperature",
+    "options": {},
+    "key": "electric_heating_temperature_6658",
+    "component": "battery_2_heater"
+  },
+  {
+    "address": 6659,
+    "name": "electric heating power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 2 Heater Power",
+    "options": {},
+    "key": "electric_heating_power_6659",
+    "component": "battery_2_heater"
+  },
+  {
+    "address": 6684,
+    "name": "DC/DC state",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 3 DC/DC Status",
+    "options": {
+      "0": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 0
+      },
+      "2": {
+        "name": "DISCHARGE",
+        "version": 0
+      },
+      "3": {
+        "name": "PROTECTION",
+        "version": 0
+      }
+    },
+    "key": "dc_dc_state_6684",
+    "component": "battery_3_heater"
+  },
+  {
+    "address": 6689,
+    "name": "electric heating state",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 3 Heater Status",
+    "options": {},
+    "key": "electric_heating_state_6689",
+    "component": "battery_3_heater"
+  },
+  {
+    "address": 6690,
+    "name": "electric heating temperature",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 3 Heater Temperature",
+    "options": {},
+    "key": "electric_heating_temperature_6690",
+    "component": "battery_3_heater"
+  },
+  {
+    "address": 6691,
+    "name": "electric heating power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 3 Heater Power",
+    "options": {},
+    "key": "electric_heating_power_6691",
+    "component": "battery_3_heater"
+  },
+  {
+    "address": 6716,
+    "name": "DC/DC state",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 4 DC/DC Status",
+    "options": {
+      "0": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 0
+      },
+      "2": {
+        "name": "DISCHARGE",
+        "version": 0
+      },
+      "3": {
+        "name": "PROTECTION",
+        "version": 0
+      }
+    },
+    "key": "dc_dc_state_6716",
+    "component": "battery_4_heater"
+  },
+  {
+    "address": 6721,
+    "name": "electric heating state",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 4 Heater Status",
+    "options": {
+      "0": {
+        "name": "OFF",
+        "version": 0
+      },
+      "1": {
+        "name": "ON",
+        "version": 0
+      }
+    },
+    "key": "electric_heating_state_6721",
+    "component": "battery_4_heater"
+  },
+  {
+    "address": 6722,
+    "name": "electric heating temperature",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 4 Heater Temperature",
+    "options": {},
+    "key": "electric_heating_temperature_6722",
+    "component": "battery_4_heater"
+  },
+  {
+    "address": 6723,
+    "name": "electric heating power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 4 Heater Power",
+    "options": {},
+    "key": "electric_heating_power_6723",
+    "component": "battery_4_heater"
+  },
+  {
+    "address": 6730,
+    "name": "SoH",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 5 SOH",
+    "options": {},
+    "key": "so_h_6730",
+    "component": "battery_5_real_time_data"
+  },
+  {
+    "address": 6731,
+    "name": "NCyc",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Slave Battery Pack 5 Cycle Count",
+    "options": {},
+    "key": "ncyc_6731",
+    "component": "battery_5_statistics"
+  },
+  {
+    "address": 6733,
+    "name": "V",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "V",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 5 Voltage",
+    "options": {},
+    "key": "v_6733",
+    "component": "battery_5_real_time_data"
+  },
+  {
+    "address": 6741,
+    "name": "CellTmpMin",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 5 Minimum Cell Temperature",
+    "options": {},
+    "key": "cell_tmp_min_6741",
+    "component": "battery_5_real_time_data"
+  },
+  {
+    "address": 6745,
+    "name": "SN",
+    "data_type": "string",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave battery module 5 serial number.",
+    "options": {},
+    "key": "sn_6745",
+    "component": "battery_5_info",
+    "deferred": "Serial register length is not specified by the source."
+  },
+  {
+    "address": 6831,
+    "name": "A",
+    "data_type": "int16",
+    "scale": 0.01,
+    "unit": "A",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 5 Current (uplink register)",
+    "options": {},
+    "key": "a_6831",
+    "component": "battery_5_real_time_data"
+  },
+  {
+    "address": 6860,
+    "name": "DC/DC state",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 5 DC/DC Status",
+    "options": {
+      "0": {
+        "name": "STANDBY",
+        "version": 0
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 0
+      },
+      "2": {
+        "name": "DISCHARGE",
+        "version": 0
+      }
+    },
+    "key": "dc_dc_state_6860",
+    "component": "battery_5_heater"
+  },
+  {
+    "address": 6865,
+    "name": "electric heating state",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Slave Battery Pack 5 Heater Status",
+    "options": {
+      "0": {
+        "name": "OFF",
+        "version": 0
+      },
+      "1": {
+        "name": "ON",
+        "version": 0
+      }
+    },
+    "key": "electric_heating_state_6865",
+    "component": "battery_5_heater"
+  },
+  {
+    "address": 6866,
+    "name": "electric heating temperature",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "°C",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 5 Heater Temperature",
+    "options": {},
+    "key": "electric_heating_temperature_6866",
+    "component": "battery_5_heater"
+  },
+  {
+    "address": 6867,
+    "name": "electric heating power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 5 Heater Power",
+    "options": {},
+    "key": "electric_heating_power_6867",
+    "component": "battery_5_heater"
+  },
+  {
+    "address": 7075,
+    "name": "Platform connection state",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "CMS Network Connection Status",
+    "options": {
+      "0": {
+        "name": "SUCESS",
+        "version": 0
+      },
+      "1": {
+        "name": "FAIL",
+        "version": 0
+      }
+    },
+    "key": "platform_connection_state_7075",
+    "component": "system_real_time_state"
+  },
+  {
+    "address": 7080,
+    "name": "Load point 1",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_1_7080",
+    "component": "load_profile"
+  },
+  {
+    "address": 7081,
+    "name": "Load point 2",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_2_7081",
+    "component": "load_profile"
+  },
+  {
+    "address": 7082,
+    "name": "Load point 3",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_3_7082",
+    "component": "load_profile"
+  },
+  {
+    "address": 7083,
+    "name": "Load point 4",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_4_7083",
+    "component": "load_profile"
+  },
+  {
+    "address": 7084,
+    "name": "Load point 5",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_5_7084",
+    "component": "load_profile"
+  },
+  {
+    "address": 7085,
+    "name": "Load point 6",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_6_7085",
+    "component": "load_profile"
+  },
+  {
+    "address": 7086,
+    "name": "Load point 7",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_7_7086",
+    "component": "load_profile"
+  },
+  {
+    "address": 7087,
+    "name": "Load point 8",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_8_7087",
+    "component": "load_profile"
+  },
+  {
+    "address": 7088,
+    "name": "Load point 9",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_9_7088",
+    "component": "load_profile"
+  },
+  {
+    "address": 7089,
+    "name": "Load point 10",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_10_7089",
+    "component": "load_profile"
+  },
+  {
+    "address": 7090,
+    "name": "Load point 11",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_11_7090",
+    "component": "load_profile"
+  },
+  {
+    "address": 7091,
+    "name": "Load point 12",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_12_7091",
+    "component": "load_profile"
+  },
+  {
+    "address": 7092,
+    "name": "Load point 13",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_13_7092",
+    "component": "load_profile"
+  },
+  {
+    "address": 7093,
+    "name": "Load point 14",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_14_7093",
+    "component": "load_profile"
+  },
+  {
+    "address": 7094,
+    "name": "Load point 15",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_15_7094",
+    "component": "load_profile"
+  },
+  {
+    "address": 7095,
+    "name": "Load point 16",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_16_7095",
+    "component": "load_profile"
+  },
+  {
+    "address": 7096,
+    "name": "Load point 17",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_17_7096",
+    "component": "load_profile"
+  },
+  {
+    "address": 7097,
+    "name": "Load point 18",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_18_7097",
+    "component": "load_profile"
+  },
+  {
+    "address": 7098,
+    "name": "Load point 19",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_19_7098",
+    "component": "load_profile"
+  },
+  {
+    "address": 7099,
+    "name": "Load point 20",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_20_7099",
+    "component": "load_profile"
+  },
+  {
+    "address": 7100,
+    "name": "Load point 21",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_21_7100",
+    "component": "load_profile"
+  },
+  {
+    "address": 7101,
+    "name": "Load point 22",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_22_7101",
+    "component": "load_profile"
+  },
+  {
+    "address": 7102,
+    "name": "Load point 23",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_23_7102",
+    "component": "load_profile"
+  },
+  {
+    "address": 7103,
+    "name": "Load point 24",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_24_7103",
+    "component": "load_profile"
+  },
+  {
+    "address": 7104,
+    "name": "Load point 25",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_25_7104",
+    "component": "load_profile"
+  },
+  {
+    "address": 7105,
+    "name": "Load point 26",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_26_7105",
+    "component": "load_profile"
+  },
+  {
+    "address": 7106,
+    "name": "Load point 27",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_27_7106",
+    "component": "load_profile"
+  },
+  {
+    "address": 7107,
+    "name": "Load point 28",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_28_7107",
+    "component": "load_profile"
+  },
+  {
+    "address": 7108,
+    "name": "Load point 29",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_29_7108",
+    "component": "load_profile"
+  },
+  {
+    "address": 7109,
+    "name": "Load point 30",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_30_7109",
+    "component": "load_profile"
+  },
+  {
+    "address": 7110,
+    "name": "Load point 31",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_31_7110",
+    "component": "load_profile"
+  },
+  {
+    "address": 7111,
+    "name": "Load point 32",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_32_7111",
+    "component": "load_profile"
+  },
+  {
+    "address": 7112,
+    "name": "Load point 33",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_33_7112",
+    "component": "load_profile"
+  },
+  {
+    "address": 7113,
+    "name": "Load point 34",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_34_7113",
+    "component": "load_profile"
+  },
+  {
+    "address": 7114,
+    "name": "Load point 35",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_35_7114",
+    "component": "load_profile"
+  },
+  {
+    "address": 7115,
+    "name": "Load point 36",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_36_7115",
+    "component": "load_profile"
+  },
+  {
+    "address": 7116,
+    "name": "Load point 37",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_37_7116",
+    "component": "load_profile"
+  },
+  {
+    "address": 7117,
+    "name": "Load point 38",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_38_7117",
+    "component": "load_profile"
+  },
+  {
+    "address": 7118,
+    "name": "Load point 39",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_39_7118",
+    "component": "load_profile"
+  },
+  {
+    "address": 7119,
+    "name": "Load point 40",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_40_7119",
+    "component": "load_profile"
+  },
+  {
+    "address": 7120,
+    "name": "Load point 41",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_41_7120",
+    "component": "load_profile"
+  },
+  {
+    "address": 7121,
+    "name": "Load point 42",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_42_7121",
+    "component": "load_profile"
+  },
+  {
+    "address": 7122,
+    "name": "Load point 43",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_43_7122",
+    "component": "load_profile"
+  },
+  {
+    "address": 7123,
+    "name": "Load point 44",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_44_7123",
+    "component": "load_profile"
+  },
+  {
+    "address": 7124,
+    "name": "Load point 45",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_45_7124",
+    "component": "load_profile"
+  },
+  {
+    "address": 7125,
+    "name": "Load point 46",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_46_7125",
+    "component": "load_profile"
+  },
+  {
+    "address": 7126,
+    "name": "Load point 47",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 1 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_47_7126",
+    "component": "load_profile"
+  },
+  {
+    "address": 7127,
+    "name": "Load point 48",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 0,
+    "description": "Simulated load for Time Slot 48 (30-minute interval, 48 time slots in total. For simplicity, only the first and last time slots are listed.)",
+    "options": {},
+    "key": "load_point_48_7127",
+    "component": "load_profile"
+  },
+  {
+    "address": 7238,
+    "name": "SmartSocketState",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "Socket",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Smart Socket Status",
+    "options": {
+      "0": {
+        "name": "disconnect",
+        "version": 0
+      },
+      "1": {
+        "name": "connect",
+        "version": 0
+      }
+    },
+    "key": "smart_socket_state_7238",
+    "component": "socket_real_time_state"
+  },
+  {
+    "address": 7239,
+    "name": "SmartSocketP",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "Socket",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Smart Plug Power",
+    "options": {},
+    "key": "smart_socket_p_7239",
+    "component": "socket_real_time_data"
+  },
+  {
+    "address": 7240,
+    "name": "Grid standard code",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "Grid",
+    "group": "Settings",
+    "version": 0,
+    "description": "Grid Code",
+    "options": {
+      "0": {
+        "name": "VDE4105_Germany",
+        "version": 0
+      },
+      "1": {
+        "name": "G98_England",
+        "version": 0
+      },
+      "2": {
+        "name": "EN50549-10_Netherlands",
+        "version": 0
+      },
+      "3": {
+        "name": "CEI 0-21_Italy",
+        "version": 0
+      },
+      "19": {
+        "name": "C10/26_Belgium",
+        "version": 0
+      },
+      "20": {
+        "name": "France",
+        "version": 0
+      },
+      "33": {
+        "name": "Austria",
+        "version": 0
+      },
+      "34": {
+        "name": "Switzerland",
+        "version": 0
+      },
+      "69": {
+        "name": "NTS2.1_Spain",
+        "version": 0
+      }
+    },
+    "key": "grid_standard_code_7240",
+    "component": "grid_settings"
+  },
+  {
+    "address": 7241,
+    "name": "system  Parallel mode",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "Cluster",
+    "group": "Settings",
+    "version": 0,
+    "description": "Cluster Mode",
+    "options": {
+      "0": {
+        "name": "Normal Mode",
+        "version": 0
+      },
+      "1": {
+        "name": "Master Mode",
+        "version": 0
+      },
+      "2": {
+        "name": "Slave Mode",
+        "version": 0
+      }
+    },
+    "key": "system_parallel_mode_7241",
+    "component": "cluster_settings"
+  },
+  {
+    "address": 7242,
+    "name": "system  Parallel Type",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "Cluster",
+    "group": "Settings",
+    "version": 0,
+    "description": "Cluster Type",
+    "options": {
+      "0": {
+        "name": "Wired Parallel Operation",
+        "version": 0
+      },
+      "1": {
+        "name": "Wireless Parallel Operation",
+        "version": 0
+      }
+    },
+    "key": "system_parallel_type_7242",
+    "component": "cluster_settings"
+  },
+  {
+    "address": 7265,
+    "name": "LED light strip enable",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "Front Panel LED Light Strip Control",
+    "options": {
+      "0": {
+        "name": "Turn off LED strip",
+        "version": 0
+      },
+      "1": {
+        "name": "Turn on LED strip",
+        "version": 0
+      },
+      "2": {
+        "name": "LED strip low power mode (half brightness)",
+        "version": 0
+      }
+    },
+    "key": "led_light_strip_enable_7265",
+    "component": "system_settings"
+  },
+  {
+    "address": 7266,
+    "name": "Bypass enable",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "Bypass",
+    "group": "Settings",
+    "version": 0,
+    "description": "Off-grid & Bypass Enable",
+    "options": {
+      "0": {
+        "name": "Off-grid and Bypass Disable",
+        "version": 0
+      },
+      "1": {
+        "name": "Off-grid and Bypass Enable Control",
+        "version": 0
+      }
+    },
+    "key": "bypass_enable_7266",
+    "component": "bypass_settings"
+  },
+  {
+    "address": 7267,
+    "name": "key load enable",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "Bypass",
+    "group": "Settings",
+    "version": 0,
+    "description": "Critical Load Enable (higher priority than Smart Meter and Smart Socket)",
+    "options": {
+      "0": {
+        "name": "disable",
+        "version": 0
+      },
+      "1": {
+        "name": "enable",
+        "version": 0
+      }
+    },
+    "key": "key_load_enable_7267",
+    "component": "bypass_settings"
+  },
+  {
+    "address": 7268,
+    "name": "Force Full Charge Interval",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "Forced Full Charge Interval，Configurable range: 0–60 days. 0 = Disable automatic full charge. Default = 0.",
+    "options": {},
+    "key": "force_full_charge_interval_7268",
+    "component": "system_settings"
+  },
+  {
+    "address": 7269,
+    "name": "Force Full Charge Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "Forced Full Charge Start Time，Default: 00:00. High byte = Hour (0–23), Low byte = Minute (0–59).",
+    "options": {},
+    "key": "force_full_charge_start_time_7269",
+    "component": "system_settings"
+  },
+  {
+    "address": 7270,
+    "name": "Forced AC charge power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 14,
+    "description": "AC Charging Power，Charging power when battery SOC falls below Backup SOC. Configurable range: 100–2400 W.",
+    "options": {},
+    "key": "forced_ac_charge_power_7270",
+    "component": "system_settings"
+  },
+  {
+    "address": 7271,
+    "name": "Full charge calibration",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 19,
+    "description": "Immediate Full Charge Calibration Command，This setting takes effect immediately and is not persistent. It is cleared after power-off, restart, or once a full charge is completed.",
+    "options": {
+      "0": {
+        "name": "Disable Immediate Full Charge Calibration",
+        "version": 0
+      },
+      "1": {
+        "name": "Immediate Full Charge Calibration",
+        "version": 0
+      }
+    },
+    "key": "full_charge_calibration_7271",
+    "component": "system_settings"
+  },
+  {
+    "address": 7272,
+    "name": "CounterCurrentCharge",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Settings",
+    "version": 19,
+    "description": "Allow Charging When Reverse Power Flow Is Detected by the Meter",
+    "options": {
+      "0": {
+        "name": "disable",
+        "version": 0
+      },
+      "1": {
+        "name": "enable",
+        "version": 0
+      }
+    },
+    "key": "counter_current_charge_7272",
+    "component": "system_settings"
+  },
+  {
+    "address": 7300,
+    "name": "User-defined Period 1 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_1_start_time_7300",
+    "component": "schedule_1"
+  },
+  {
+    "address": 7301,
+    "name": "User-defined Period 1 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_1_end_time_7301",
+    "component": "schedule_1"
+  },
+  {
+    "address": 7302,
+    "name": "User-defined Period 1_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_1_act_7302",
+    "component": "schedule_1"
+  },
+  {
+    "address": 7303,
+    "name": "User-defined Period 1_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_1_act_w_7303",
+    "component": "schedule_1"
+  },
+  {
+    "address": 7304,
+    "name": "User-defined Period 1_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_1_end_soc_7304",
+    "component": "schedule_1"
+  },
+  {
+    "address": 7305,
+    "name": "User-defined Period 2 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_2_start_time_7305",
+    "component": "schedule_2"
+  },
+  {
+    "address": 7306,
+    "name": "User-defined Period 2 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_2_end_time_7306",
+    "component": "schedule_2"
+  },
+  {
+    "address": 7307,
+    "name": "User-defined Period 2_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_2_act_7307",
+    "component": "schedule_2"
+  },
+  {
+    "address": 7308,
+    "name": "User-defined Period 2_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_2_act_w_7308",
+    "component": "schedule_2"
+  },
+  {
+    "address": 7309,
+    "name": "User-defined Period 2_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_2_end_soc_7309",
+    "component": "schedule_2"
+  },
+  {
+    "address": 7310,
+    "name": "User-defined Period 3 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_3_start_time_7310",
+    "component": "schedule_3"
+  },
+  {
+    "address": 7311,
+    "name": "User-defined Period 3 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_3_end_time_7311",
+    "component": "schedule_3"
+  },
+  {
+    "address": 7312,
+    "name": "User-defined Period 3_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_3_act_7312",
+    "component": "schedule_3"
+  },
+  {
+    "address": 7313,
+    "name": "User-defined Period 3_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_3_act_w_7313",
+    "component": "schedule_3"
+  },
+  {
+    "address": 7314,
+    "name": "User-defined Period 3_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_3_end_soc_7314",
+    "component": "schedule_3"
+  },
+  {
+    "address": 7315,
+    "name": "User-defined Period 4 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_4_start_time_7315",
+    "component": "schedule_4"
+  },
+  {
+    "address": 7316,
+    "name": "User-defined Period 4 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_4_end_time_7316",
+    "component": "schedule_4"
+  },
+  {
+    "address": 7317,
+    "name": "User-defined Period 4_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_4_act_7317",
+    "component": "schedule_4"
+  },
+  {
+    "address": 7318,
+    "name": "User-defined Period 4_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_4_act_w_7318",
+    "component": "schedule_4"
+  },
+  {
+    "address": 7319,
+    "name": "User-defined Period 4_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_4_end_soc_7319",
+    "component": "schedule_4"
+  },
+  {
+    "address": 7320,
+    "name": "User-defined Period 5 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_5_start_time_7320",
+    "component": "schedule_5"
+  },
+  {
+    "address": 7321,
+    "name": "User-defined Period 5 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_5_end_time_7321",
+    "component": "schedule_5"
+  },
+  {
+    "address": 7322,
+    "name": "User-defined Period 5_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_5_act_7322",
+    "component": "schedule_5"
+  },
+  {
+    "address": 7323,
+    "name": "User-defined Period 5_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_5_act_w_7323",
+    "component": "schedule_5"
+  },
+  {
+    "address": 7324,
+    "name": "User-defined Period 5_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_5_end_soc_7324",
+    "component": "schedule_5"
+  },
+  {
+    "address": 7325,
+    "name": "User-defined Period 6 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_6_start_time_7325",
+    "component": "schedule_6"
+  },
+  {
+    "address": 7326,
+    "name": "User-defined Period 6 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_6_end_time_7326",
+    "component": "schedule_6"
+  },
+  {
+    "address": 7327,
+    "name": "User-defined Period 6_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_6_act_7327",
+    "component": "schedule_6"
+  },
+  {
+    "address": 7328,
+    "name": "User-defined Period 6_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_6_act_w_7328",
+    "component": "schedule_6"
+  },
+  {
+    "address": 7329,
+    "name": "User-defined Period 6_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_6_end_soc_7329",
+    "component": "schedule_6"
+  },
+  {
+    "address": 7330,
+    "name": "User-defined Period 7 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_7_start_time_7330",
+    "component": "schedule_7"
+  },
+  {
+    "address": 7331,
+    "name": "User-defined Period 7 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_7_end_time_7331",
+    "component": "schedule_7"
+  },
+  {
+    "address": 7332,
+    "name": "User-defined Period 7_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_7_act_7332",
+    "component": "schedule_7"
+  },
+  {
+    "address": 7333,
+    "name": "User-defined Period 7_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_7_act_w_7333",
+    "component": "schedule_7"
+  },
+  {
+    "address": 7334,
+    "name": "User-defined Period 7_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_7_end_soc_7334",
+    "component": "schedule_7"
+  },
+  {
+    "address": 7335,
+    "name": "User-defined Period 8 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_8_start_time_7335",
+    "component": "schedule_8"
+  },
+  {
+    "address": 7336,
+    "name": "User-defined Period 8 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_8_end_time_7336",
+    "component": "schedule_8"
+  },
+  {
+    "address": 7337,
+    "name": "User-defined Period 8_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_8_act_7337",
+    "component": "schedule_8"
+  },
+  {
+    "address": 7338,
+    "name": "User-defined Period 8_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_8_act_w_7338",
+    "component": "schedule_8"
+  },
+  {
+    "address": 7339,
+    "name": "User-defined Period 8_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_8_end_soc_7339",
+    "component": "schedule_8"
+  },
+  {
+    "address": 7340,
+    "name": "User-defined Period 9 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_9_start_time_7340",
+    "component": "schedule_9"
+  },
+  {
+    "address": 7341,
+    "name": "User-defined Period 9 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_9_end_time_7341",
+    "component": "schedule_9"
+  },
+  {
+    "address": 7342,
+    "name": "User-defined Period 9_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_9_act_7342",
+    "component": "schedule_9"
+  },
+  {
+    "address": 7343,
+    "name": "User-defined Period 9_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_9_act_w_7343",
+    "component": "schedule_9"
+  },
+  {
+    "address": 7344,
+    "name": "User-defined Period 9_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_9_end_soc_7344",
+    "component": "schedule_9"
+  },
+  {
+    "address": 7345,
+    "name": "User-defined Period 10 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_10_start_time_7345",
+    "component": "schedule_10"
+  },
+  {
+    "address": 7346,
+    "name": "User-defined Period 10 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_10_end_time_7346",
+    "component": "schedule_10"
+  },
+  {
+    "address": 7347,
+    "name": "User-defined Period 10_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_10_act_7347",
+    "component": "schedule_10"
+  },
+  {
+    "address": 7348,
+    "name": "User-defined Period 10_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_10_act_w_7348",
+    "component": "schedule_10"
+  },
+  {
+    "address": 7349,
+    "name": "User-defined Period 10_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_10_end_soc_7349",
+    "component": "schedule_10"
+  },
+  {
+    "address": 7350,
+    "name": "User-defined Period 11 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_11_start_time_7350",
+    "component": "schedule_11"
+  },
+  {
+    "address": 7351,
+    "name": "User-defined Period 11 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_11_end_time_7351",
+    "component": "schedule_11"
+  },
+  {
+    "address": 7352,
+    "name": "User-defined Period 11_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_11_act_7352",
+    "component": "schedule_11"
+  },
+  {
+    "address": 7353,
+    "name": "User-defined Period 11_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_11_act_w_7353",
+    "component": "schedule_11"
+  },
+  {
+    "address": 7354,
+    "name": "User-defined Period 11_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_11_end_soc_7354",
+    "component": "schedule_11"
+  },
+  {
+    "address": 7355,
+    "name": "User-defined Period 12 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_12_start_time_7355",
+    "component": "schedule_12"
+  },
+  {
+    "address": 7356,
+    "name": "User-defined Period 12 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_12_end_time_7356",
+    "component": "schedule_12"
+  },
+  {
+    "address": 7357,
+    "name": "User-defined Period 12_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_12_act_7357",
+    "component": "schedule_12"
+  },
+  {
+    "address": 7358,
+    "name": "User-defined Period 12_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_12_act_w_7358",
+    "component": "schedule_12"
+  },
+  {
+    "address": 7359,
+    "name": "User-defined Period 12_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_12_end_soc_7359",
+    "component": "schedule_12"
+  },
+  {
+    "address": 7360,
+    "name": "User-defined Period 13 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_13_start_time_7360",
+    "component": "schedule_13"
+  },
+  {
+    "address": 7361,
+    "name": "User-defined Period 13 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_13_end_time_7361",
+    "component": "schedule_13"
+  },
+  {
+    "address": 7362,
+    "name": "User-defined Period 13_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_13_act_7362",
+    "component": "schedule_13"
+  },
+  {
+    "address": 7363,
+    "name": "User-defined Period 13_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_13_act_w_7363",
+    "component": "schedule_13"
+  },
+  {
+    "address": 7364,
+    "name": "User-defined Period 13_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_13_end_soc_7364",
+    "component": "schedule_13"
+  },
+  {
+    "address": 7365,
+    "name": "User-defined Period 14 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_14_start_time_7365",
+    "component": "schedule_14"
+  },
+  {
+    "address": 7366,
+    "name": "User-defined Period 14 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_14_end_time_7366",
+    "component": "schedule_14"
+  },
+  {
+    "address": 7367,
+    "name": "User-defined Period 14_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_14_act_7367",
+    "component": "schedule_14"
+  },
+  {
+    "address": 7368,
+    "name": "User-defined Period 14_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_14_act_w_7368",
+    "component": "schedule_14"
+  },
+  {
+    "address": 7369,
+    "name": "User-defined Period 14_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_14_end_soc_7369",
+    "component": "schedule_14"
+  },
+  {
+    "address": 7370,
+    "name": "User-defined Period 15 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_15_start_time_7370",
+    "component": "schedule_15"
+  },
+  {
+    "address": 7371,
+    "name": "User-defined Period 15 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_15_end_time_7371",
+    "component": "schedule_15"
+  },
+  {
+    "address": 7372,
+    "name": "User-defined Period 15_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_15_act_7372",
+    "component": "schedule_15"
+  },
+  {
+    "address": 7373,
+    "name": "User-defined Period 15_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_15_act_w_7373",
+    "component": "schedule_15"
+  },
+  {
+    "address": 7374,
+    "name": "User-defined Period 15_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_15_end_soc_7374",
+    "component": "schedule_15"
+  },
+  {
+    "address": 7375,
+    "name": "User-defined Period 16 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_16_start_time_7375",
+    "component": "schedule_16"
+  },
+  {
+    "address": 7376,
+    "name": "User-defined Period 16 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_16_end_time_7376",
+    "component": "schedule_16"
+  },
+  {
+    "address": 7377,
+    "name": "User-defined Period 16_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_16_act_7377",
+    "component": "schedule_16"
+  },
+  {
+    "address": 7378,
+    "name": "User-defined Period 16_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_16_act_w_7378",
+    "component": "schedule_16"
+  },
+  {
+    "address": 7379,
+    "name": "User-defined Period 16_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_16_end_soc_7379",
+    "component": "schedule_16"
+  },
+  {
+    "address": 7380,
+    "name": "User-defined Period 17 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_17_start_time_7380",
+    "component": "schedule_17"
+  },
+  {
+    "address": 7381,
+    "name": "User-defined Period 17 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_17_end_time_7381",
+    "component": "schedule_17"
+  },
+  {
+    "address": 7382,
+    "name": "User-defined Period 17_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_17_act_7382",
+    "component": "schedule_17"
+  },
+  {
+    "address": 7383,
+    "name": "User-defined Period 17_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_17_act_w_7383",
+    "component": "schedule_17"
+  },
+  {
+    "address": 7384,
+    "name": "User-defined Period 17_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_17_end_soc_7384",
+    "component": "schedule_17"
+  },
+  {
+    "address": 7385,
+    "name": "User-defined Period 18 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_18_start_time_7385",
+    "component": "schedule_18"
+  },
+  {
+    "address": 7386,
+    "name": "User-defined Period 18 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_18_end_time_7386",
+    "component": "schedule_18"
+  },
+  {
+    "address": 7387,
+    "name": "User-defined Period 18_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_18_act_7387",
+    "component": "schedule_18"
+  },
+  {
+    "address": 7388,
+    "name": "User-defined Period 18_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_18_act_w_7388",
+    "component": "schedule_18"
+  },
+  {
+    "address": 7389,
+    "name": "User-defined Period 18_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_18_end_soc_7389",
+    "component": "schedule_18"
+  },
+  {
+    "address": 7390,
+    "name": "User-defined Period 19 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_19_start_time_7390",
+    "component": "schedule_19"
+  },
+  {
+    "address": 7391,
+    "name": "User-defined Period 19 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_19_end_time_7391",
+    "component": "schedule_19"
+  },
+  {
+    "address": 7392,
+    "name": "User-defined Period 19_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_19_act_7392",
+    "component": "schedule_19"
+  },
+  {
+    "address": 7393,
+    "name": "User-defined Period 19_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_19_act_w_7393",
+    "component": "schedule_19"
+  },
+  {
+    "address": 7394,
+    "name": "User-defined Period 19_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_19_end_soc_7394",
+    "component": "schedule_19"
+  },
+  {
+    "address": 7395,
+    "name": "User-defined Period 20 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_20_start_time_7395",
+    "component": "schedule_20"
+  },
+  {
+    "address": 7396,
+    "name": "User-defined Period 20 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_20_end_time_7396",
+    "component": "schedule_20"
+  },
+  {
+    "address": 7397,
+    "name": "User-defined Period 20_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_20_act_7397",
+    "component": "schedule_20"
+  },
+  {
+    "address": 7398,
+    "name": "User-defined Period 20_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_20_act_w_7398",
+    "component": "schedule_20"
+  },
+  {
+    "address": 7399,
+    "name": "User-defined Period 20_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_20_end_soc_7399",
+    "component": "schedule_20"
+  },
+  {
+    "address": 7400,
+    "name": "User-defined Period 21 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_21_start_time_7400",
+    "component": "schedule_21"
+  },
+  {
+    "address": 7401,
+    "name": "User-defined Period 21 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_21_end_time_7401",
+    "component": "schedule_21"
+  },
+  {
+    "address": 7402,
+    "name": "User-defined Period 21_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_21_act_7402",
+    "component": "schedule_21"
+  },
+  {
+    "address": 7403,
+    "name": "User-defined Period 21_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_21_act_w_7403",
+    "component": "schedule_21"
+  },
+  {
+    "address": 7404,
+    "name": "User-defined Period 21_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_21_end_soc_7404",
+    "component": "schedule_21"
+  },
+  {
+    "address": 7405,
+    "name": "User-defined Period 22 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_22_start_time_7405",
+    "component": "schedule_22"
+  },
+  {
+    "address": 7406,
+    "name": "User-defined Period 22 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_22_end_time_7406",
+    "component": "schedule_22"
+  },
+  {
+    "address": 7407,
+    "name": "User-defined Period 22_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_22_act_7407",
+    "component": "schedule_22"
+  },
+  {
+    "address": 7408,
+    "name": "User-defined Period 22_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_22_act_w_7408",
+    "component": "schedule_22"
+  },
+  {
+    "address": 7409,
+    "name": "User-defined Period 22_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_22_end_soc_7409",
+    "component": "schedule_22"
+  },
+  {
+    "address": 7410,
+    "name": "User-defined Period 23 Start Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_23_start_time_7410",
+    "component": "schedule_23"
+  },
+  {
+    "address": 7411,
+    "name": "User-defined Period 23 End Time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_23_end_time_7411",
+    "component": "schedule_23"
+  },
+  {
+    "address": 7412,
+    "name": "User-defined Period 23_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 1 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_23_act_7412",
+    "component": "schedule_23"
+  },
+  {
+    "address": 7413,
+    "name": "User-defined Period 23_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_23_act_w_7413",
+    "component": "schedule_23"
+  },
+  {
+    "address": 7414,
+    "name": "User-defined Period 23_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_23_end_soc_7414",
+    "component": "schedule_23"
+  },
+  {
+    "address": 7415,
+    "name": "User-defined Period 24 start time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 24 Start Time (format: HH:MM, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
+    "options": {},
+    "key": "user_defined_period_24_start_time_7415",
+    "component": "schedule_24"
+  },
+  {
+    "address": 7416,
+    "name": "User-defined Period 24 end time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 24 End Time (format: HH:MM, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
+    "options": {},
+    "key": "user_defined_period_24_end_time_7416",
+    "component": "schedule_24"
+  },
+  {
+    "address": 7417,
+    "name": "User-defined Period 24_ACT",
+    "data_type": "enum16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Custom Time Slot 24 Control Command",
+    "options": {
+      "0": {
+        "name": "DEFAULT",
+        "version": 16
+      },
+      "1": {
+        "name": "CHARGE",
+        "version": 16
+      },
+      "2": {
+        "name": "DISCHAGE",
+        "version": 16
+      },
+      "3": {
+        "name": "STANDBY WITH PV CHARGE",
+        "version": 16
+      },
+      "4": {
+        "name": "PV CHARGE  ONLY",
+        "version": 16
+      },
+      "5": {
+        "name": "DISCHAGE BY ACT_W",
+        "version": 16
+      }
+    },
+    "key": "user_defined_period_24_act_7417",
+    "component": "schedule_24"
+  },
+  {
+    "address": 7418,
+    "name": "User-defined Period 24_ACT_W",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "Configurable power: 0–3600 W (single unit); 0–10800 W (parallel system)",
+    "options": {},
+    "key": "user_defined_period_24_act_w_7418",
+    "component": "schedule_24"
+  },
+  {
+    "address": 7419,
+    "name": "User-defined Period 24_END_SOC",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "%",
+    "access": "RW",
+    "system": "System",
+    "group": "Mode",
+    "version": 16,
+    "description": "SoC: 0–100%",
+    "options": {},
+    "key": "user_defined_period_24_end_soc_7419",
+    "component": "schedule_24"
+  },
+  {
+    "address": 7510,
+    "name": "ActInWh",
+    "data_type": "acc32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Total INV Charging Energy (calculated from INV input power)",
+    "options": {},
+    "key": "act_in_wh_7510",
+    "component": "inverter_statistics"
+  },
+  {
+    "address": 7512,
+    "name": "PVtWh",
+    "data_type": "acc32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "PV",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Total PV Energy Generation",
+    "options": {},
+    "key": "pvt_wh_7512",
+    "component": "pv_statistics"
+  },
+  {
+    "address": 7519,
+    "name": "Day_B Charge Energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Daily Battery Charge Energy",
+    "options": {},
+    "key": "day_b_charge_energy_7519",
+    "component": "battery_statistics"
+  },
+  {
+    "address": 7521,
+    "name": "Day_B disCharge Energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Daily Battery Discharge Energy",
+    "options": {},
+    "key": "day_b_dis_charge_energy_7521",
+    "component": "battery_statistics"
+  },
+  {
+    "address": 7534,
+    "name": "Modbus Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "System",
+    "group": "Info",
+    "version": 0,
+    "description": "Platform protocol version supported by the device. Parse the decimal value directly (e.g. 15 → V1.5).",
+    "options": {},
+    "key": "modbus_version_7534",
+    "component": "system_info"
+  },
+  {
+    "address": 7537,
+    "name": "Off Grid rated voltage",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "V",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Info",
+    "version": 0,
+    "description": "Rated off-grid inverter voltage.",
+    "options": {},
+    "key": "off_grid_rated_voltage_7537",
+    "component": "inverter_info"
+  },
+  {
+    "address": 7538,
+    "name": "Off Grid rated frequency",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "Hz",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Info",
+    "version": 0,
+    "description": "Rated off-grid inverter frequency.",
+    "options": {},
+    "key": "off_grid_rated_frequency_7538",
+    "component": "inverter_info"
+  },
+  {
+    "address": 7539,
+    "name": "Off Grid rated power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Info",
+    "version": 0,
+    "description": "Rated off-grid output power.",
+    "options": {},
+    "key": "off_grid_rated_power_7539",
+    "component": "inverter_info"
+  },
+  {
+    "address": 7540,
+    "name": "MPPT rated power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "PV",
+    "group": "Info",
+    "version": 0,
+    "description": "Rated MPPT power.",
+    "options": {},
+    "key": "mppt_rated_power_7540",
+    "component": "pv_info"
+  },
+  {
+    "address": 7541,
+    "name": "On Grid rated power",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "AC Output",
+    "group": "Info",
+    "version": 0,
+    "description": "Rated grid-connected output power. This represents the maximum active output power of the inverter.",
+    "options": {},
+    "key": "on_grid_rated_power_7541",
+    "component": "ac_output_info"
+  },
+  {
+    "address": 7545,
+    "name": "Microinverter generation energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Bypass",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Total Microinverter Energy Generation",
+    "options": {},
+    "key": "microinverter_generation_energy_7545",
+    "component": "bypass_statistics"
+  },
+  {
+    "address": 7547,
+    "name": "Day Microinverter generation energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Bypass",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Daily Microinverter Energy Generation",
+    "options": {
+      "0": {
+        "name": "OFF",
+        "version": 0
+      },
+      "1": {
+        "name": "ON",
+        "version": 0
+      }
+    },
+    "key": "day_microinverter_generation_energy_7547",
+    "component": "bypass_statistics"
+  },
+  {
+    "address": 7549,
+    "name": "Day  On_Grid output energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Daily Grid-connected Discharge Energy (INV output energy)",
+    "options": {},
+    "key": "day_on_grid_output_energy_7549",
+    "component": "inverter_statistics"
+  },
+  {
+    "address": 7551,
+    "name": "Day  Off_Grid output energy",
+    "data_type": "uint32",
+    "scale": 1.0,
+    "unit": "Wh",
+    "access": "R",
+    "system": "Inverter",
+    "group": "Statistics",
+    "version": 0,
+    "description": "Daily Off-grid Discharge Energy (INV output energy)",
+    "options": {},
+    "key": "day_off_grid_output_energy_7551",
+    "component": "inverter_statistics"
+  },
+  {
+    "address": 7553,
+    "name": "Bypass  power",
+    "data_type": "int16",
+    "scale": 1.0,
+    "unit": "W",
+    "access": "R",
+    "system": "Bypass",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Bypass Power",
+    "options": {},
+    "key": "bypass_power_7553",
+    "component": "bypass_real_time_data"
+  },
+  {
+    "address": 7554,
+    "name": "Bypass  mode",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Bypass",
+    "group": "Real Time State",
+    "version": 0,
+    "description": "Bypass Mode (The EMS automatically detects the current direction to determine the operating mode.)，0: EPS Mode；1: Microinverter Mode",
+    "options": {},
+    "key": "bypass_mode_7554",
+    "component": "bypass_real_time_state"
+  },
+  {
+    "address": 7560,
+    "name": "CMS module reset req",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "System",
+    "group": "Settings",
+    "version": 0,
+    "description": "CMS Module Reset Request",
+    "options": {},
+    "key": "cms_module_reset_req_7560",
+    "component": "system_settings"
+  },
+  {
+    "address": 7586,
+    "name": "System shutdown count",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "System",
+    "group": "Statistics",
+    "version": 0,
+    "description": "System Shutdown Count",
+    "options": {},
+    "key": "system_shutdown_count_7586",
+    "component": "system_statistics"
+  },
+  {
+    "address": 7591,
+    "name": "Grid voltage",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "V",
+    "access": "R",
+    "system": "AC Output",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "AC Input Voltage. Independent of charging/discharging status. Can be used for grid voltage detection. (uplink register)",
+    "options": {},
+    "key": "grid_voltage_7591",
+    "component": "ac_output_real_time_data"
+  },
+  {
+    "address": 7592,
+    "name": "Grid voltage",
+    "data_type": "uint16",
+    "scale": 0.01,
+    "unit": "Hz",
+    "access": "R",
+    "system": "AC Output",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "AC Input Frequency. Independent of charging/discharging status. Can be used for grid frequency detection.",
+    "options": {},
+    "key": "grid_voltage_7592",
+    "component": "ac_output_real_time_data"
+  },
+  {
+    "address": 7593,
+    "name": "Master Pack SOC",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Master Battery Pack SOC (uplink register)",
+    "options": {},
+    "key": "master_pack_soc_7593",
+    "component": "battery_0_soc"
+  },
+  {
+    "address": 7594,
+    "name": "Slave pack1 SOC",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 1 SOC (uplink register)",
+    "options": {},
+    "key": "slave_pack1_soc_7594",
+    "component": "battery_1_soc"
+  },
+  {
+    "address": 7595,
+    "name": "Slave pack2 SOC",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 2 SOC (uplink register)",
+    "options": {},
+    "key": "slave_pack2_soc_7595",
+    "component": "battery_2_soc"
+  },
+  {
+    "address": 7596,
+    "name": "Slave pack3 SOC",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 3 SOC (uplink register)",
+    "options": {},
+    "key": "slave_pack3_soc_7596",
+    "component": "battery_3_soc"
+  },
+  {
+    "address": 7597,
+    "name": "Slave pack4 SOC",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 4 SOC (uplink register)",
+    "options": {},
+    "key": "slave_pack4_soc_7597",
+    "component": "battery_4_soc"
+  },
+  {
+    "address": 7598,
+    "name": "Slave pack5 SOC",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 0,
+    "description": "Slave Battery Pack 5 SOC (uplink register)",
+    "options": {},
+    "key": "slave_pack5_soc_7598",
+    "component": "battery_5_soc"
+  },
+  {
+    "address": 7599,
+    "name": "Total SOC(Full-system SoC)",
+    "data_type": "uint16",
+    "scale": 0.1,
+    "unit": "%",
+    "access": "R",
+    "system": "Battery",
+    "group": "Real Time Data",
+    "version": 18,
+    "description": "System SOC",
+    "options": {},
+    "key": "total_soc_full_system_so_c_7599",
+    "component": "battery_real_time_data"
+  },
+  {
+    "address": 7600,
+    "name": "no fully charge time",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": "h",
+    "access": "R",
+    "system": "Battery",
+    "group": "Statistics",
+    "version": 19,
+    "description": "Battery Operation Time Without Full Charge (hours)",
+    "options": {},
+    "key": "no_fully_charge_time_7600",
+    "component": "battery_statistics"
+  },
+  {
+    "address": 10000,
+    "name": "DCDC_slave5_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave DCDC5 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
+    "options": {},
+    "key": "dcdc_slave5_version_10000",
+    "component": "battery_info"
+  },
+  {
+    "address": 10001,
+    "name": "BMS_slave5_Version",
+    "data_type": "uint16",
+    "scale": 1.0,
+    "unit": null,
+    "access": "R",
+    "system": "Battery",
+    "group": "Info",
+    "version": 0,
+    "description": "Slave BMS5 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01)",
+    "options": {},
+    "key": "bms_slave5_version_10001",
+    "component": "battery_info"
+  }
+]
