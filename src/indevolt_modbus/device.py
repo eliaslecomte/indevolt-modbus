@@ -9,6 +9,7 @@ from modbus_connection.model import Device, UpdateReport
 from .components import COMPONENTS, SystemInfo
 from .model import IndevoltComponent, Register
 from .registers import REGISTERS
+from .transport import ReadRecoveryUnit
 
 
 class IndevoltDevice(Device):
@@ -20,11 +21,12 @@ class IndevoltDevice(Device):
     """
 
     def __init__(self, unit: ModbusUnit, *, message_spacing: float = 5.0) -> None:
-        super().__init__(unit)
         if message_spacing < 1:
             raise ValueError("The device requires at least one second between requests")
         unit.set_message_spacing(message_spacing)
         unit.require_timeout(2.0)
+        unit = ReadRecoveryUnit(unit, message_spacing)
+        super().__init__(unit)
         self.protocol_version = 0
         self.components: dict[str, IndevoltComponent] = {}
         self.registers: tuple[Register, ...] = ()
