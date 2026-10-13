@@ -117,3 +117,14 @@ to the inverter alarm catalog; grid charging uses its explicitly documented
 Hardware behavior has not been verified. Tests use the actual modbus-connection
 mock backend; community captures are needed to resolve the documented gaps.
 See [RELEASING.md](RELEASING.md) for publishing setup.
+
+## Selective reads
+
+After `await device.async_ensure_setup()`, `device.read_groups(register_keys)` returns
+independent typed readers. Each reader covers one contiguous block of selected,
+supported fields (at most 125 registers), with no undocumented gaps. Call
+`await reader.async_update()` and read decoded attributes from that reader. Its
+cache is independent of `device.value()` and the full subsystem caches. This lets
+callers prioritize writes and fast telemetry between individual read requests
+without narrowing the device's writable fields. Schedule all access through one
+worker/connection and respect the device's message spacing.

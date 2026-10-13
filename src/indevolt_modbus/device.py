@@ -67,6 +67,47 @@ class IndevoltDevice(Device):
         component = self.components.get(register.component)
         return None if component is None else getattr(component, register.key)
 
+    def read_groups(self, keys: Iterable[str]) -> list[IndevoltComponent]:
+        """Build independent readers for selected contiguous supported fields.
+
+        Each reader performs one request, so callers can schedule priorities
+        between requests. Readers have independent caches; they do not mutate
+        the full components used by async_update and async_write.
+        """
+        selected = set(keys)
+        supported = {r.key: r for r in self.registers}
+        if selected - supported.keys():
+            raise ValueError("Unsupported register in read selection")
+        groups: list[IndevoltComponent] = []
+        for name, component in self.components.items():
+            fields = sorted(
+                (f for key, f in component.resolved_fields.items() if key in selected),
+                key=lambda f: f.address,
+            )
+            names: list[str] = []
+            start = end = -1
+            for resolved in fields:
+                field = resolved.field
+                if names and (
+                    resolved.address != end
+                    or resolved.address + resolved.count - start > 125
+                ):
+                    reader = COMPONENTS[name](self.modbus_unit)
+                    reader.max_gap = 1
+                    reader.restrict_fields(names)
+                    groups.append(reader)
+                    names = []
+                if not names:
+                    start = resolved.address
+                names.append(field.name)
+                end = resolved.address + resolved.count
+            if names:
+                reader = COMPONENTS[name](self.modbus_unit)
+                reader.max_gap = 1
+                reader.restrict_fields(names)
+                groups.append(reader)
+        return groups
+
     def options(self, register: Register) -> dict[int, str]:
         """Return only enumeration options supported by the protocol version."""
         return {

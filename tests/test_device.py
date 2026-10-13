@@ -190,3 +190,42 @@ async def test_invalid_probe(unit: MockModbusUnit, version: int) -> None:
     unit.holding[7534] = version
     with pytest.raises(ValueError, match="protocol"):
         await IndevoltDevice.async_detect(unit)
+
+
+async def test_selected_read_groups_are_bounded_and_independent(
+    unit: MockModbusUnit,
+) -> None:
+    device = await IndevoltDevice.async_detect(unit)
+    unit.holding.update({6563: 2, 6564: 65526, 7599: 765, 1269: [1, 2]})
+    registers = {r.address: r for r in device.registers}
+    selected = [registers[a].key for a in (6563, 6564, 7599, 1269)]
+    groups = device.read_groups(selected)
+    unit.read_events.clear()
+    values = {}
+    for group in groups:
+        before = len(unit.read_events)
+        await group.async_update()
+        assert len(unit.read_events) == before + 1
+        values.update({key: getattr(group, key) for key in group.resolved_fields})
+    assert values[registers[6564].key] == -10
+    assert values[registers[7599].key] == 76.5
+    assert values[registers[1269].key] == 65538
+    assert device.value(registers[6564]) is None
+    # Building another selection must not permanently narrow device components.
+    (reader,) = device.read_groups([registers[6564].key])
+    assert set(reader.resolved_fields) == {registers[6564].key}
+    assert device.read_groups([]) == []
+    with pytest.raises(ValueError, match="Unsupported"):
+        device.read_groups(["not_a_register"])
+
+
+async def test_adjacent_selected_fields_share_one_read(unit: MockModbusUnit) -> None:
+    device = await IndevoltDevice.async_detect(unit)
+    registers = {r.address: r for r in device.registers}
+    groups = device.read_groups(registers[a].key for a in (1150, 1151, 1152))
+    assert len(groups) == 1
+    unit.read_events.clear()
+    await groups[0].async_update()
+    assert len(unit.read_events) == 1
+    assert unit.read_events[0].address == 1150
+    assert unit.read_events[0].count == 3
