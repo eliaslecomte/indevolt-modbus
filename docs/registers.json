@@ -1010,7 +1010,7 @@
   {
     "address": 1284,
     "name": "ACOutW",
-    "data_type": "uint16",
+    "data_type": "int16",
     "scale": 1.0,
     "unit": "W",
     "access": "R",
@@ -1020,7 +1020,9 @@
     "description": "Total AC Power = INV Power (positive when charging, negative when discharging) + Bypass Power (positive for EPS, negative for microinverter).",
     "options": {},
     "key": "acout_w_1284",
-    "component": "ac_output_real_time_data"
+    "component": "ac_output_real_time_data",
+    "source_data_type": "uint16",
+    "type_override_reason": "Vendor table checked 2026-10-15 declares uint16 but describes directional inverter-plus-bypass power. User-observed raw 63609 decodes as signed int16 -1927 W; use two's-complement int16 without sign inversion."
   },
   {
     "address": 2219,

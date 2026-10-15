@@ -341,7 +341,7 @@ class AcOutputRealTimeData(IndevoltComponent):
     """Ac output real time data."""
 
     acout_w_1284 = NumberField[int](
-        1284, count=1, signed=False, scale=1.0, unit="W", writable=False
+        1284, count=1, signed=True, scale=1.0, unit="W", writable=False
     )
     grid_voltage_7591 = NumberField[float](
         7591, count=1, signed=False, scale=0.1, unit="V", writable=False

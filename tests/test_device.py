@@ -229,3 +229,39 @@ async def test_adjacent_selected_fields_share_one_read(unit: MockModbusUnit) -> 
     assert len(unit.read_events) == 1
     assert unit.read_events[0].address == 1150
     assert unit.read_events[0].count == 3
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [(0, 0), (32767, 32767), (32768, -32768), (63609, -1927), (65535, -1)],
+)
+async def test_acoutw_signed_decoding(
+    unit: MockModbusUnit, raw: int, expected: int
+) -> None:
+    unit.holding[1284] = raw
+    device = await IndevoltDevice.async_detect(unit)
+    register = next(r for r in device.registers if r.address == 1284)
+    (reader,) = device.read_groups([register.key])
+    await reader.async_update(notify=False)
+    assert getattr(reader, register.key) == expected
+
+
+@pytest.mark.parametrize(
+    ("ac_raw", "battery_raw", "ac_expected", "battery_expected"),
+    [(1927, 63609, 1927, -1927), (63609, 1927, -1927, 1927)],
+)
+async def test_ac_and_battery_direction_preserved(
+    unit: MockModbusUnit,
+    ac_raw: int,
+    battery_raw: int,
+    ac_expected: int,
+    battery_expected: int,
+) -> None:
+    # Charging: AC input positive, battery charging negative. Discharge reverses both.
+    unit.holding.update({174: ac_raw, 6564: battery_raw})
+    device = await IndevoltDevice.async_detect(unit)
+    registers = {r.address: r for r in device.registers}
+    for address, expected in ((174, ac_expected), (6564, battery_expected)):
+        (reader,) = device.read_groups([registers[address].key])
+        await reader.async_update(notify=False)
+        assert getattr(reader, registers[address].key) == expected

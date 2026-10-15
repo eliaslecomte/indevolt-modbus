@@ -128,3 +128,20 @@ cache is independent of `device.value()` and the full subsystem caches. This let
 callers prioritize writes and fast telemetry between individual read requests
 without narrowing the device's writable fields. Schedule all access through one
 worker/connection and respect the device's message spacing.
+
+### Directional AC power correction
+
+The [vendor register table](https://docs.indevolt.com/docs/hardware/open-data/modbus-register-table/)
+checked on 2026-10-15 labels **ACOutW (1284)** as `uint16`, while its
+description defines directional inverter-plus-bypass power. A user hardware
+capture reported raw `63609`, consistent with signed `-1927 W` (`63609 - 65536`).
+The canonical catalog therefore overrides this field to `int16`, retaining the
+vendor type and rationale in `source_data_type` and `type_override_reason`.
+Generated decoding uses two's complement without reversing the sign.
+
+- **174, inverter AC power:** positive = AC charging/input; negative = AC discharging/output.
+- **6564, battery power:** positive = battery discharge; negative = battery charge.
+- **1284, total AC power:** inverter power plus bypass power; the vendor describes
+  bypass as positive for EPS and negative for a microinverter.
+
+Registers 174 and 6564 remain signed and retain their distinct conventions.
