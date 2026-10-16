@@ -11,6 +11,17 @@ from indevolt_modbus import REGISTERS, IndevoltDevice
 from indevolt_modbus.components import COMPONENTS
 
 
+@pytest.mark.parametrize(("raw", "expected"), [(0, 0), (990, 0.99), (64536, -1)])
+async def test_power_factor_preserves_signed_ratio(unit, raw, expected):
+    unit.holding[122] = raw
+    device = await IndevoltDevice.async_detect(unit)
+    register = next(r for r in device.registers if r.address == 122)
+    (reader,) = device.read_groups([register.key])
+    await reader.async_update(notify=False)
+    assert getattr(reader, register.key) == expected
+    assert register.unit is None
+
+
 async def test_microinverter_energy_uses_both_words(unit: MockModbusUnit) -> None:
     """Stray OFF/ON rows must not truncate a documented 32-bit energy counter."""
     unit.holding.update({7545: [1, 2], 7547: [3, 4]})

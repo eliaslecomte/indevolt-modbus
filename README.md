@@ -158,3 +158,8 @@ they are separate reads and carry no timezone.
 The vendor table leaves the unit column blank for 7268 and 7270, but explicitly
 specifies days and watts in their descriptions. The canonical catalog supplies
 `d` and `W` respectively. No wire scaling or write bounds change.
+
+Power factor (122) retains its signed 0.001 scale as a dimensionless ratio.
+The vendor labels it `Pct`, but a live 0.99 reading agrees with approximately
+173 W / 174 VA, not 0.99 percent. `source_unit` and `unit_override_reason`
+record this discrepancy in the canonical catalog.

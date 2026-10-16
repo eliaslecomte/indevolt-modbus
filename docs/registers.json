@@ -376,7 +376,7 @@
     "name": "PF",
     "data_type": "int16",
     "scale": 0.001,
-    "unit": "Pct",
+    "unit": null,
     "access": "R",
     "system": "Inverter",
     "group": "Real Time Data",
@@ -384,7 +384,9 @@
     "description": "0 when INV is charging; otherwise, INV AC output power factor.",
     "options": {},
     "key": "pf_122",
-    "component": "inverter_real_time_data"
+    "component": "inverter_real_time_data",
+    "source_unit": "Pct",
+    "unit_override_reason": "The documented 0.001 scale produces a dimensionless power-factor ratio. Hardware reported 0.99 alongside approximately 173 W / 174 VA; Pct incorrectly labels that ratio as a percentage. Preserve the numeric scale and expose no unit."
   },
   {
     "address": 124,

@@ -124,7 +124,7 @@ class InverterRealTimeData(IndevoltComponent):
         120, count=1, signed=True, scale=1.0, unit="var", writable=False
     )
     pf_122 = NumberField[float](
-        122, count=1, signed=True, scale=0.001, unit="Pct", writable=False
+        122, count=1, signed=True, scale=0.001, unit=None, writable=False
     )
     inv_input_power_174 = NumberField[int](
         174, count=1, signed=True, scale=1.0, unit="W", writable=False
