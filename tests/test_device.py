@@ -12,7 +12,9 @@ from indevolt_modbus.components import COMPONENTS
 
 
 @pytest.mark.parametrize(("raw", "expected"), [(0, 0), (990, 0.99), (64536, -1)])
-async def test_power_factor_preserves_signed_ratio(unit, raw, expected):
+async def test_power_factor_preserves_signed_ratio(
+    unit: MockModbusUnit, raw: int, expected: float
+) -> None:
     unit.holding[122] = raw
     device = await IndevoltDevice.async_detect(unit)
     register = next(r for r in device.registers if r.address == 122)
