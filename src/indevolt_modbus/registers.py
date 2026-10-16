@@ -4524,8 +4524,8 @@ REGISTERS: tuple[Register, ...] = (
         display_format=None,
         minimum_version=0,
         writable=False,
-        options={0: "OFF", 1: "ON"},
-        option_versions={0: 0, 1: 0},
+        options={},
+        option_versions={},
     ),
     Register(
         key="day_on_grid_output_energy_7549",

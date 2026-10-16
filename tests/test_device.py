@@ -11,6 +11,22 @@ from indevolt_modbus import REGISTERS, IndevoltDevice
 from indevolt_modbus.components import COMPONENTS
 
 
+async def test_microinverter_energy_uses_both_words(unit: MockModbusUnit) -> None:
+    """Stray OFF/ON rows must not truncate a documented 32-bit energy counter."""
+    unit.holding.update({7545: [1, 2], 7547: [3, 4]})
+    device = await IndevoltDevice.async_detect(unit)
+    registers = {r.address: r for r in device.registers}
+    (reader,) = device.read_groups(registers[a].key for a in (7545, 7547))
+    unit.read_events.clear()
+    await reader.async_update(notify=False)
+    assert unit.read_events[0].address == 7545
+    assert unit.read_events[0].count == 4
+    assert getattr(reader, registers[7545].key) == 65538
+    assert getattr(reader, registers[7547].key) == 196612
+    assert not registers[7547].options
+    assert registers[7547].unit == "Wh"
+
+
 @pytest.fixture
 def unit() -> MockModbusUnit:
     connection = MockModbusConnection()

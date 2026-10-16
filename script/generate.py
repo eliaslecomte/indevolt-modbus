@@ -45,6 +45,8 @@ def main() -> None:
             continue
         groups.setdefault(row["component"], []).append(row)
         options = row["options"] if row["data_type"] != "bitfield32" else {}
+        if options and row["data_type"] not in {"enum16", "uint16"}:
+            raise ValueError(f"Enum options conflict with type at {row['address']}")
         name = f"Register{row['address']}"
         if options:
             enums += [f"class {name}(IntEnum):", f'    """{row["name"]}."""']

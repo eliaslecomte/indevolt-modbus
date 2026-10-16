@@ -533,10 +533,3 @@ class Register7417(IntEnum):
     STANDBY_WITH_PV_CHARGE = 3
     PV_CHARGE_ONLY = 4
     DISCHAGE_BY_ACT_W = 5
-
-
-class Register7547(IntEnum):
-    """Day Microinverter generation energy."""
-
-    OFF = 0
-    ON = 1

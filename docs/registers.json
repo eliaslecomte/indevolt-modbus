@@ -6326,7 +6326,10 @@
     "group": "Statistics",
     "version": 0,
     "description": "Daily Microinverter Energy Generation",
-    "options": {
+    "options": {},
+    "key": "day_microinverter_generation_energy_7547",
+    "component": "bypass_statistics",
+    "source_options": {
       "0": {
         "name": "OFF",
         "version": 0
@@ -6336,8 +6339,7 @@
         "version": 0
       }
     },
-    "key": "day_microinverter_generation_energy_7547",
-    "component": "bypass_statistics"
+    "options_override_reason": "The vendor table appends unaddressed OFF/ON rows after this uint32 Wh counter. They cannot describe energy; retain the documented 32-bit numeric counter."
   },
   {
     "address": 7549,

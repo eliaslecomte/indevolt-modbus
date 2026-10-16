@@ -196,8 +196,8 @@ class BypassStatistics(IndevoltComponent):
     microinverter_generation_energy_7545 = NumberField[int](
         7545, count=2, signed=False, scale=1.0, unit="Wh", writable=False
     )
-    day_microinverter_generation_energy_7547 = enum(
-        7547, enums.Register7547, writable=False
+    day_microinverter_generation_energy_7547 = NumberField[int](
+        7547, count=2, signed=False, scale=1.0, unit="Wh", writable=False
     )
 
 
