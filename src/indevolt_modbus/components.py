@@ -226,13 +226,13 @@ class SystemSettings(IndevoltComponent):
         7265, enums.Register7265, writable=validator(7265)
     )
     force_full_charge_interval_7268 = NumberField[int](
-        7268, count=1, signed=False, scale=1.0, unit=None, writable=validator(7268)
+        7268, count=1, signed=False, scale=1.0, unit="d", writable=validator(7268)
     )
     force_full_charge_start_time_7269 = NumberField[int](
         7269, count=1, signed=False, scale=1.0, unit=None, writable=validator(7269)
     )
     forced_ac_charge_power_7270 = NumberField[int](
-        7270, count=1, signed=False, scale=1.0, unit=None, writable=validator(7270)
+        7270, count=1, signed=False, scale=1.0, unit="W", writable=validator(7270)
     )
     full_charge_calibration_7271 = enum(
         7271, enums.Register7271, writable=validator(7271)

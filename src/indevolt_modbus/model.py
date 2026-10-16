@@ -22,6 +22,7 @@ class Register:
     address: int
     unit: str | None
     group: str
+    display_format: str | None = None
     minimum_version: int = 0
     writable: bool = False
     options: dict[int, str] = field(default_factory=dict)

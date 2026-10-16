@@ -145,3 +145,16 @@ Generated decoding uses two's complement without reversing the sign.
   bypass as positive for EPS and negative for a microinverter.
 
 Registers 174 and 6564 remain signed and retain their distinct conventions.
+
+### Presentation metadata
+
+`Register.display_format` describes documented decimal firmware versions and
+packed clock/schedule fields. Decoded protocol values remain numeric; consumers
+may render them as versions or text times while retaining the original value.
+This includes the forced-full-charge start time (7269), sleep times, and all
+24 schedule start/end pairs. Split device date/time words are not a timestamp:
+they are separate reads and carry no timezone.
+
+The vendor table leaves the unit column blank for 7268 and 7270, but explicitly
+specifies days and watts in their descriptions. The canonical catalog supplies
+`d` and `W` respectively. No wire scaling or write bounds change.

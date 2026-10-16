@@ -62,6 +62,7 @@ def main() -> None:
                     "address": row["address"],
                     "unit": row["unit"],
                     "group": row["group"],
+                    "display_format": row.get("display_format"),
                     "minimum_version": row["version"],
                     "writable": row["access"] == "RW",
                     "options": {int(k): v["name"] for k, v in options.items()},

@@ -12,7 +12,8 @@
     "description": "EMS software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "ems_version_70",
-    "component": "system_info"
+    "component": "system_info",
+    "display_format": "firmware"
   },
   {
     "address": 71,
@@ -27,7 +28,8 @@
     "description": "Master BMS software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "bms_master_version_71",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 72,
@@ -42,7 +44,8 @@
     "description": "Inverter software version. Parse the decimal value directly and display it in the format Vx.xx (e.g. 108 → V1.08).",
     "options": {},
     "key": "inverter_version_72",
-    "component": "inverter_info"
+    "component": "inverter_info",
+    "display_format": "inverter_version"
   },
   {
     "address": 73,
@@ -57,7 +60,8 @@
     "description": "MPPT software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "mppt_version_73",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 78,
@@ -177,7 +181,8 @@
     "description": "Slave DCDC1 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "dcdc_slaver1_version_92",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 93,
@@ -192,7 +197,8 @@
     "description": "Slave BMS1 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "bms_slaver1_version_93",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 94,
@@ -207,7 +213,8 @@
     "description": "Slave DCDC2 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "dcdc_slaver2_version_94",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 95,
@@ -222,7 +229,8 @@
     "description": "Slave BMS2 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "bms_slaver2_version_95",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 96,
@@ -237,7 +245,8 @@
     "description": "Slave DCDC3 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "dcdc_slaver3_version_96",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 97,
@@ -252,7 +261,8 @@
     "description": "Slave BMS3 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "bms_slaver3_version_97",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 98,
@@ -267,7 +277,8 @@
     "description": "Slave DCDC4 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "dcdc_slaver4_version_98",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 99,
@@ -282,7 +293,8 @@
     "description": "Slave BMS4 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "bms_slaver4_version_99",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 103,
@@ -645,7 +657,8 @@
     "description": "Date (Year/Month)，High byte: Year (2000-based), range 0–99; Low byte: Month, range 1–12",
     "options": {},
     "key": "time_year_month_1132",
-    "component": "system_settings"
+    "component": "system_settings",
+    "display_format": "year_month"
   },
   {
     "address": 1133,
@@ -660,7 +673,8 @@
     "description": "Date (Day/Hour)，High byte: Day, range 1–31; Low byte: Hour, range 0–23",
     "options": {},
     "key": "time_day_hour_1133",
-    "component": "system_settings"
+    "component": "system_settings",
+    "display_format": "day_hour"
   },
   {
     "address": 1134,
@@ -675,7 +689,8 @@
     "description": "Time (Minute/Second)，High byte: Minute, range 0–59; Low byte: Second, range 0–59",
     "options": {},
     "key": "time_min_sec_1134",
-    "component": "system_settings"
+    "component": "system_settings",
+    "display_format": "minute_second"
   },
   {
     "address": 1138,
@@ -891,7 +906,8 @@
     "description": "Deep Sleep Schedule Start Time，Format example: 0x121E = 18:30. High byte = Hour (0–23), Low byte = Minute (0–59).",
     "options": {},
     "key": "deep_sleep_start_time_hour_min_1155",
-    "component": "system_settings"
+    "component": "system_settings",
+    "display_format": "hour_minute"
   },
   {
     "address": 1156,
@@ -906,7 +922,8 @@
     "description": "Deep Sleep Schedule End Time，Format example: 0x121E = 18:30. High byte = Hour (0–23), Low byte = Minute (0–59).",
     "options": {},
     "key": "deep_sleep_stop_time_hour_min_1156",
-    "component": "system_settings"
+    "component": "system_settings",
+    "display_format": "hour_minute"
   },
   {
     "address": 1246,
@@ -3595,7 +3612,7 @@
     "name": "Force Full Charge Interval",
     "data_type": "uint16",
     "scale": 1.0,
-    "unit": null,
+    "unit": "d",
     "access": "RW",
     "system": "System",
     "group": "Settings",
@@ -3618,14 +3635,15 @@
     "description": "Forced Full Charge Start Time，Default: 00:00. High byte = Hour (0–23), Low byte = Minute (0–59).",
     "options": {},
     "key": "force_full_charge_start_time_7269",
-    "component": "system_settings"
+    "component": "system_settings",
+    "display_format": "hour_minute"
   },
   {
     "address": 7270,
     "name": "Forced AC charge power",
     "data_type": "uint16",
     "scale": 1.0,
-    "unit": null,
+    "unit": "W",
     "access": "RW",
     "system": "System",
     "group": "Settings",
@@ -3696,7 +3714,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_1_start_time_7300",
-    "component": "schedule_1"
+    "component": "schedule_1",
+    "display_format": "hour_minute"
   },
   {
     "address": 7301,
@@ -3711,7 +3730,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_1_end_time_7301",
-    "component": "schedule_1"
+    "component": "schedule_1",
+    "display_format": "hour_minute"
   },
   {
     "address": 7302,
@@ -3796,7 +3816,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_2_start_time_7305",
-    "component": "schedule_2"
+    "component": "schedule_2",
+    "display_format": "hour_minute"
   },
   {
     "address": 7306,
@@ -3811,7 +3832,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_2_end_time_7306",
-    "component": "schedule_2"
+    "component": "schedule_2",
+    "display_format": "hour_minute"
   },
   {
     "address": 7307,
@@ -3896,7 +3918,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_3_start_time_7310",
-    "component": "schedule_3"
+    "component": "schedule_3",
+    "display_format": "hour_minute"
   },
   {
     "address": 7311,
@@ -3911,7 +3934,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_3_end_time_7311",
-    "component": "schedule_3"
+    "component": "schedule_3",
+    "display_format": "hour_minute"
   },
   {
     "address": 7312,
@@ -3996,7 +4020,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_4_start_time_7315",
-    "component": "schedule_4"
+    "component": "schedule_4",
+    "display_format": "hour_minute"
   },
   {
     "address": 7316,
@@ -4011,7 +4036,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_4_end_time_7316",
-    "component": "schedule_4"
+    "component": "schedule_4",
+    "display_format": "hour_minute"
   },
   {
     "address": 7317,
@@ -4096,7 +4122,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_5_start_time_7320",
-    "component": "schedule_5"
+    "component": "schedule_5",
+    "display_format": "hour_minute"
   },
   {
     "address": 7321,
@@ -4111,7 +4138,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_5_end_time_7321",
-    "component": "schedule_5"
+    "component": "schedule_5",
+    "display_format": "hour_minute"
   },
   {
     "address": 7322,
@@ -4196,7 +4224,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_6_start_time_7325",
-    "component": "schedule_6"
+    "component": "schedule_6",
+    "display_format": "hour_minute"
   },
   {
     "address": 7326,
@@ -4211,7 +4240,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_6_end_time_7326",
-    "component": "schedule_6"
+    "component": "schedule_6",
+    "display_format": "hour_minute"
   },
   {
     "address": 7327,
@@ -4296,7 +4326,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_7_start_time_7330",
-    "component": "schedule_7"
+    "component": "schedule_7",
+    "display_format": "hour_minute"
   },
   {
     "address": 7331,
@@ -4311,7 +4342,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_7_end_time_7331",
-    "component": "schedule_7"
+    "component": "schedule_7",
+    "display_format": "hour_minute"
   },
   {
     "address": 7332,
@@ -4396,7 +4428,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_8_start_time_7335",
-    "component": "schedule_8"
+    "component": "schedule_8",
+    "display_format": "hour_minute"
   },
   {
     "address": 7336,
@@ -4411,7 +4444,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_8_end_time_7336",
-    "component": "schedule_8"
+    "component": "schedule_8",
+    "display_format": "hour_minute"
   },
   {
     "address": 7337,
@@ -4496,7 +4530,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_9_start_time_7340",
-    "component": "schedule_9"
+    "component": "schedule_9",
+    "display_format": "hour_minute"
   },
   {
     "address": 7341,
@@ -4511,7 +4546,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_9_end_time_7341",
-    "component": "schedule_9"
+    "component": "schedule_9",
+    "display_format": "hour_minute"
   },
   {
     "address": 7342,
@@ -4596,7 +4632,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_10_start_time_7345",
-    "component": "schedule_10"
+    "component": "schedule_10",
+    "display_format": "hour_minute"
   },
   {
     "address": 7346,
@@ -4611,7 +4648,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_10_end_time_7346",
-    "component": "schedule_10"
+    "component": "schedule_10",
+    "display_format": "hour_minute"
   },
   {
     "address": 7347,
@@ -4696,7 +4734,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_11_start_time_7350",
-    "component": "schedule_11"
+    "component": "schedule_11",
+    "display_format": "hour_minute"
   },
   {
     "address": 7351,
@@ -4711,7 +4750,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_11_end_time_7351",
-    "component": "schedule_11"
+    "component": "schedule_11",
+    "display_format": "hour_minute"
   },
   {
     "address": 7352,
@@ -4796,7 +4836,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_12_start_time_7355",
-    "component": "schedule_12"
+    "component": "schedule_12",
+    "display_format": "hour_minute"
   },
   {
     "address": 7356,
@@ -4811,7 +4852,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_12_end_time_7356",
-    "component": "schedule_12"
+    "component": "schedule_12",
+    "display_format": "hour_minute"
   },
   {
     "address": 7357,
@@ -4896,7 +4938,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_13_start_time_7360",
-    "component": "schedule_13"
+    "component": "schedule_13",
+    "display_format": "hour_minute"
   },
   {
     "address": 7361,
@@ -4911,7 +4954,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_13_end_time_7361",
-    "component": "schedule_13"
+    "component": "schedule_13",
+    "display_format": "hour_minute"
   },
   {
     "address": 7362,
@@ -4996,7 +5040,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_14_start_time_7365",
-    "component": "schedule_14"
+    "component": "schedule_14",
+    "display_format": "hour_minute"
   },
   {
     "address": 7366,
@@ -5011,7 +5056,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_14_end_time_7366",
-    "component": "schedule_14"
+    "component": "schedule_14",
+    "display_format": "hour_minute"
   },
   {
     "address": 7367,
@@ -5096,7 +5142,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_15_start_time_7370",
-    "component": "schedule_15"
+    "component": "schedule_15",
+    "display_format": "hour_minute"
   },
   {
     "address": 7371,
@@ -5111,7 +5158,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_15_end_time_7371",
-    "component": "schedule_15"
+    "component": "schedule_15",
+    "display_format": "hour_minute"
   },
   {
     "address": 7372,
@@ -5196,7 +5244,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_16_start_time_7375",
-    "component": "schedule_16"
+    "component": "schedule_16",
+    "display_format": "hour_minute"
   },
   {
     "address": 7376,
@@ -5211,7 +5260,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_16_end_time_7376",
-    "component": "schedule_16"
+    "component": "schedule_16",
+    "display_format": "hour_minute"
   },
   {
     "address": 7377,
@@ -5296,7 +5346,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_17_start_time_7380",
-    "component": "schedule_17"
+    "component": "schedule_17",
+    "display_format": "hour_minute"
   },
   {
     "address": 7381,
@@ -5311,7 +5362,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_17_end_time_7381",
-    "component": "schedule_17"
+    "component": "schedule_17",
+    "display_format": "hour_minute"
   },
   {
     "address": 7382,
@@ -5396,7 +5448,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_18_start_time_7385",
-    "component": "schedule_18"
+    "component": "schedule_18",
+    "display_format": "hour_minute"
   },
   {
     "address": 7386,
@@ -5411,7 +5464,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_18_end_time_7386",
-    "component": "schedule_18"
+    "component": "schedule_18",
+    "display_format": "hour_minute"
   },
   {
     "address": 7387,
@@ -5496,7 +5550,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_19_start_time_7390",
-    "component": "schedule_19"
+    "component": "schedule_19",
+    "display_format": "hour_minute"
   },
   {
     "address": 7391,
@@ -5511,7 +5566,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_19_end_time_7391",
-    "component": "schedule_19"
+    "component": "schedule_19",
+    "display_format": "hour_minute"
   },
   {
     "address": 7392,
@@ -5596,7 +5652,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_20_start_time_7395",
-    "component": "schedule_20"
+    "component": "schedule_20",
+    "display_format": "hour_minute"
   },
   {
     "address": 7396,
@@ -5611,7 +5668,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_20_end_time_7396",
-    "component": "schedule_20"
+    "component": "schedule_20",
+    "display_format": "hour_minute"
   },
   {
     "address": 7397,
@@ -5696,7 +5754,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_21_start_time_7400",
-    "component": "schedule_21"
+    "component": "schedule_21",
+    "display_format": "hour_minute"
   },
   {
     "address": 7401,
@@ -5711,7 +5770,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_21_end_time_7401",
-    "component": "schedule_21"
+    "component": "schedule_21",
+    "display_format": "hour_minute"
   },
   {
     "address": 7402,
@@ -5796,7 +5856,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_22_start_time_7405",
-    "component": "schedule_22"
+    "component": "schedule_22",
+    "display_format": "hour_minute"
   },
   {
     "address": 7406,
@@ -5811,7 +5872,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_22_end_time_7406",
-    "component": "schedule_22"
+    "component": "schedule_22",
+    "display_format": "hour_minute"
   },
   {
     "address": 7407,
@@ -5896,7 +5958,8 @@
     "description": "Custom Time Slot 1 Start Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_23_start_time_7410",
-    "component": "schedule_23"
+    "component": "schedule_23",
+    "display_format": "hour_minute"
   },
   {
     "address": 7411,
@@ -5911,7 +5974,8 @@
     "description": "Custom Time Slot 1 End Time (format: `HH:MM`, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_23_end_time_7411",
-    "component": "schedule_23"
+    "component": "schedule_23",
+    "display_format": "hour_minute"
   },
   {
     "address": 7412,
@@ -5996,7 +6060,8 @@
     "description": "Custom Time Slot 24 Start Time (format: HH:MM, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00. There are 24 custom time slots in total, each occupying 5 registers. Only the first and last time slots are listed here.",
     "options": {},
     "key": "user_defined_period_24_start_time_7415",
-    "component": "schedule_24"
+    "component": "schedule_24",
+    "display_format": "hour_minute"
   },
   {
     "address": 7416,
@@ -6011,7 +6076,8 @@
     "description": "Custom Time Slot 24 End Time (format: HH:MM, HH = 0–23, MM = 0–59, 24-hour format). The upper 8 bits represent the hour, and the lower 8 bits represent the minute. Default: 00:00.",
     "options": {},
     "key": "user_defined_period_24_end_time_7416",
-    "component": "schedule_24"
+    "component": "schedule_24",
+    "display_format": "hour_minute"
   },
   {
     "address": 7417,
@@ -6156,7 +6222,8 @@
     "description": "Platform protocol version supported by the device. Parse the decimal value directly (e.g. 15 → V1.5).",
     "options": {},
     "key": "modbus_version_7534",
-    "component": "system_info"
+    "component": "system_info",
+    "display_format": "protocol_version"
   },
   {
     "address": 7537,
@@ -6525,7 +6592,8 @@
     "description": "Slave DCDC5 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01).",
     "options": {},
     "key": "dcdc_slave5_version_10000",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   },
   {
     "address": 10001,
@@ -6540,6 +6608,7 @@
     "description": "Slave BMS5 software version. Parse the decimal value directly (e.g. 14501 → V1.45.01)",
     "options": {},
     "key": "bms_slave5_version_10001",
-    "component": "battery_info"
+    "component": "battery_info",
+    "display_format": "firmware"
   }
 ]
